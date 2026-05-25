@@ -9,11 +9,11 @@ export function Kak() {
         <Reveal>
           <p className="eyebrow mb-5">— Как мы работаем</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream-100 max-w-3xl leading-tight">
-            Шесть форматов работы<br />с Basina <span className="text-gold-500">&</span> Partners
+            Восемь форматов работы<br />с Basina <span className="text-gold-500">&</span> Partners
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-navy-800/60">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-800/60">
           {servicesShort.map((s, i) => (
             <Reveal key={s.id} delay={i * 0.04}>
               <Link
