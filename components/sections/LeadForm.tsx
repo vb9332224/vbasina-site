@@ -48,8 +48,7 @@ export function LeadForm({ id = "form" }: { id?: string }) {
       <div id={id} className="bg-navy-800/40 border border-gold-500/40 p-8 text-cream-100">
         <p className="font-serif text-2xl text-gold-500 mb-3">Заявка отправлена</p>
         <p className="text-cream-100/80">
-          Виолетта свяжется с вами в течение 24 часов в рабочие дни. На срочные запросы по
-          срочным запросам — в течение 4 часов.
+          Наша команда свяжется с вами в течение рабочего дня.
         </p>
       </div>
     );
