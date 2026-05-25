@@ -41,7 +41,7 @@ const storyChapters = [
       "Первый в стране горизонтальный жилой комплекс на ИЖС с проектным финансированием Банка ДОМ.РФ (кредитный договор от 28.12.2020). Запуск первой льготной ИЖС-ипотеки от 6,1% (2021), сокращение срока её одобрения с 2 месяцев до 5 дней. 198 домовладений на 18 га. Dubai International Award №1 (2023), лауреат премии «Российский Строительный Олимп», победитель конкурса Минстрой + Минпромторг + ДОМ.РФ.",
   },
   {
-    year: "2022–2025",
+    year: "2024–2025",
     title: "Метод Басиной и Гергель",
     text:
       "Совместно с Яной Гергель оформлен методологический фундамент — 8 слоёв создания девелоперского проекта (предназначение, душа, вкус, цвет, запах, ритм, звук, осязание). Метод применён к проектам Basina & Partners в России и СНГ. Параллельно — народный фонд «Земская среда» как масштабная социальная инициатива через ст. 582 ГК РФ.",
@@ -55,10 +55,8 @@ const storyChapters = [
 ];
 
 const figuresBlock = [
-  { v: "17 лет", label: "девелоперской и регуляторной экспертизы" },
-  { v: "198", label: "домовладений в первом ИЖС-комплексе" },
-  { v: "2,1 млрд ₽", label: "проектного финансирования от ДОМ.РФ" },
-  { v: "13 000+", label: "агентов обучено через Академию Недвижимости" },
+  { v: "150+", label: "придуманных и реализованных проектов" },
+  { v: "17 лет", label: "в бизнесе" },
 ];
 
 export default function AboutPage() {
@@ -91,14 +89,14 @@ export default function AboutPage() {
               Каждая цифра — публично проверяема: реестры ЕГРЮЛ, отчёты Комитета РСС, кредитные договоры, государственные награды.
             </h2>
           </Reveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 border-t border-navy-900/15 pt-10">
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-12 border-t border-navy-900/15 pt-12">
             {figuresBlock.map((f, i) => (
               <Reveal key={f.v} delay={i * 0.05}>
                 <div>
-                  <div className="font-serif text-4xl md:text-5xl lg:text-6xl text-navy-900 leading-none tracking-tight">
+                  <div className="font-serif text-6xl md:text-7xl lg:text-8xl text-navy-900 leading-none tracking-tight">
                     {f.v}
                   </div>
-                  <p className="mt-4 text-sm text-grey-500 leading-snug max-w-[240px]">
+                  <p className="mt-5 text-base md:text-lg text-grey-500 leading-snug max-w-md">
                     {f.label}
                   </p>
                 </div>
