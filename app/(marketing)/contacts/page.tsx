@@ -14,14 +14,14 @@ export default function ContactsPage() {
   return (
     <>
       <PageHero
-        eyebrow="— Контакты"
+        eyebrow="— С чего начать"
         title={
           <>
-            Свяжитесь<br />
-            <span className="text-gold-500">со мной лично</span>
+            Запишитесь на<br />
+            <span className="text-gold-500">15-минутное знакомство</span>
           </>
         }
-        subtitle="Отвечаю на сообщения в течение 24 часов в рабочие дни. На срочные запросы по срочным проектам — в течение 4 часов."
+        subtitle="Расскажете о задаче — честно ответим, подходим ли мы под ваш кейс и какой формат сотрудничества имеет смысл. Без обязательств. Отвечаем в течение 24 часов в рабочие дни, на срочные запросы — в течение 4 часов."
       />
 
       <section className="bg-navy-900 text-cream-100">
@@ -106,7 +106,7 @@ export default function ContactsPage() {
           <Reveal delay={0.1} className="lg:col-span-3">
             <div id="form" className="bg-navy-800/40 border border-cream-100/10 p-7 md:p-9 scroll-mt-24">
               <h2 className="font-serif text-2xl md:text-3xl text-cream-100 mb-3 leading-tight">
-                Записаться на стратегическую сессию
+                Записаться на 15-минутное знакомство
               </h2>
               <p className="text-cream-100/70 mb-6">
                 Расскажите о задаче — отвечу лично.

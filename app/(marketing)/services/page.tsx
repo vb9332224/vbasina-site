@@ -7,7 +7,7 @@ import { services } from "@/lib/services-full";
 export const metadata: Metadata = {
   title: "Услуги — Basina & Partners",
   description:
-    "Шесть форматов работы: стратегическая сессия, полный цикл, турнараунд, менторство, корпоративные сессии, авторский курс.",
+    "Восемь форматов работы: землепродюсирование, стратегическая сессия, полный цикл, антикризис, корпоративные сессии, менторство, обучение агентов, авторский курс.",
 };
 
 export default function ServicesPage() {
@@ -17,7 +17,7 @@ export default function ServicesPage() {
         eyebrow="— Как мы работаем"
         title={
           <>
-            Шесть форматов работы<br />
+            Восемь форматов работы<br />
             <span className="text-gold-500">с Basina & Partners</span>
           </>
         }
