@@ -48,7 +48,7 @@ export function LeadForm({ id = "form" }: { id?: string }) {
         <p className="font-serif text-2xl text-gold-500 mb-3">Заявка отправлена</p>
         <p className="text-cream-100/80">
           Виолетта свяжется с вами в течение 24 часов в рабочие дни. На срочные запросы по
-          антирейдерской защите — в течение 4 часов.
+          срочным запросам — в течение 4 часов.
         </p>
       </div>
     );

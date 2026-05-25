@@ -19,8 +19,7 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "/about", label: "О Виолетте" },
-  { href: "/experience", label: "17 лет в бизнесе" },
+  { href: "/about", label: "О компании" },
   { href: "/services", label: "Услуги" },
   { href: "/cases", label: "Кейсы" },
   { href: "/media", label: "Публикации" },
