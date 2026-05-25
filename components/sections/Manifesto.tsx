@@ -77,9 +77,10 @@ export function Manifesto() {
               <p className="font-serif text-3xl md:text-4xl lg:text-[44px] text-gold-500 leading-tight">
                 Делаем&nbsp;проекты-звёзды.
               </p>
-              <p className="mt-4 text-sm text-navy-900/60 leading-relaxed max-w-md">
-                Архетип бренда — Маг + Заботливый. Сила, мастерство, наследие — и одновременно
-                стабильность, контроль, забота о клиенте.
+              <p className="mt-4 text-sm text-navy-900/70 leading-relaxed max-w-md">
+                Звезда — проект, который выделяется на рынке, приносит доход собственнику и
+                оставляет наследие сообществу. Каждая наша работа целит именно туда: в проекты
+                с долгой ценностной памятью.
               </p>
             </div>
           </div>
