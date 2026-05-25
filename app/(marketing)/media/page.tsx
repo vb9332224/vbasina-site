@@ -76,11 +76,13 @@ export default function MediaPage() {
         </div>
       </section>
 
-      <section className="bg-navy-900 text-cream-100">
+      <Speaking />
+
+      <section className="bg-cream-100">
         <div className="container-x py-20 md:py-28 text-center">
           <Reveal>
             <p className="eyebrow mb-4">— Хотите интервью?</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-cream-100 mb-6 max-w-3xl mx-auto leading-tight">
+            <h2 className="font-serif text-3xl md:text-4xl text-navy-900 mb-6 max-w-3xl mx-auto leading-tight">
               Свяжитесь с пресс-службой
             </h2>
             <Button href="/contacts#form">Связаться →</Button>
