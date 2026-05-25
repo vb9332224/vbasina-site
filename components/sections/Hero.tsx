@@ -13,34 +13,35 @@ export function Hero() {
             "radial-gradient(circle at 80% 20%, var(--color-gold-500) 0px, transparent 40%)",
         }}
       />
-      <div className="container-x relative grid lg:grid-cols-5 gap-12 lg:gap-16 py-24 md:py-32 lg:py-36 min-h-[90vh] items-center">
+      <div className="container-x relative grid lg:grid-cols-5 gap-12 lg:gap-16 py-20 md:py-24 lg:py-28 min-h-[88vh] items-center">
         <div className="lg:col-span-3">
           <Reveal>
             <p className="eyebrow mb-6">Basina &amp; Partners · стратегический консалтинг</p>
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h1 className="font-serif text-[40px] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[72px] text-cream-100 tracking-tight">
-              <span className="block">
-                Продюсируем <span className="text-gold-500">территории</span>.
-              </span>
-              <span className="block">Создаём индустрии.</span>
-              <span className="block">Запускаем продукты с нуля.</span>
+            <h1 className="font-serif text-[36px] leading-[1.05] sm:text-[44px] md:text-5xl lg:text-[56px] text-cream-100 tracking-tight">
+              Делаем <span className="text-gold-500">проекты&#8209;звёзды</span>.
             </h1>
           </Reveal>
 
-          <Reveal delay={0.15}>
-            <p className="mt-8 text-base md:text-lg text-cream-100/80 leading-relaxed max-w-2xl">
-              17 лет в бизнесе. Превращаем земельные активы в инвестиционные продукты — от
-              стратегии и мастер-плана до проектного финансирования, маркетинга и отдела продаж.
-              Работаем с собственниками земли, банками, девелоперами и фондами в России, Армении,
-              Кыргызстане, Азербайджане и Таджикистане — на рынках, где институциональный
-              девелопмент только формируется.
+          <Reveal delay={0.12}>
+            <p className="mt-6 font-serif text-xl md:text-2xl text-cream-100 leading-snug max-w-2xl">
+              Основатели загородного девелопмента в России. Никто не умеет работать с загородной
+              землёй так, как мы.
             </p>
           </Reveal>
 
-          <Reveal delay={0.22}>
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <Reveal delay={0.18}>
+            <p className="mt-6 text-sm md:text-base text-cream-100/75 leading-relaxed max-w-2xl">
+              17 лет в бизнесе. Превращаем земельные активы в инвестиционные продукты — от
+              стратегии и мастер-плана до проектного финансирования, маркетинга и отдела продаж.
+              Работаем в России, Армении, Кыргызстане, Азербайджане и Таджикистане.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.24}>
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Button href="/contacts#form" variant="primary">
                 Записаться на стратегическую сессию →
               </Button>
@@ -51,7 +52,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.3}>
-            <p className="mt-10 text-xs md:text-sm text-cream-100/60 leading-relaxed max-w-xl">
+            <p className="mt-8 text-xs md:text-sm text-cream-100/60 leading-relaxed max-w-xl">
               Действительный член МАИН · Кавалер знака «Строительная Слава» · Лауреат Dubai Award 2023
             </p>
           </Reveal>
@@ -60,7 +61,7 @@ export function Hero() {
         <Reveal delay={0.2} className="lg:col-span-2">
           <div className="relative aspect-[3/4] max-w-[420px] mx-auto lg:ml-auto lg:mr-0 border border-gold-500/30 bg-navy-800/40 overflow-hidden">
             <Image
-              src="/images/portraits/violetta-hero.webp"
+              src="/images/portraits/violetta-green.jpg"
               alt="Виолетта Басина — основатель Basina & Partners"
               fill
               priority
