@@ -8,7 +8,6 @@ export const site = {
   email: "info@vbasina.com",
   telegram: "basina_violetta",
   instagram: "basina_violetta",
-  linkedin: "violetta-basina",
   defaultLocale: "ru",
   founder: {
     name: "Виолетта Басина",

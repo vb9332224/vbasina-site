@@ -75,16 +75,6 @@ export function Footer() {
                 Instagram: @{site.instagram}
               </a>
             </li>
-            <li>
-              <a
-                href={`https://linkedin.com/in/${site.linkedin}`}
-                className="hover:text-gold-300 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
           </ul>
         </div>
 

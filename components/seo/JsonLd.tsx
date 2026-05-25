@@ -18,7 +18,6 @@ const organization = {
   sameAs: [
     `https://t.me/${site.telegram}`,
     `https://instagram.com/${site.instagram}`,
-    `https://linkedin.com/in/${site.linkedin}`,
   ],
 };
 
@@ -36,7 +35,6 @@ const person = {
     "Один из основателей загородного девелопмента России. Создала первое в стране проектное финансирование ИЖС. Лауреат Dubai Award 2023.",
   sameAs: [
     `https://instagram.com/${site.instagram}`,
-    `https://linkedin.com/in/${site.linkedin}`,
   ],
   award: [
     "Dubai International Award №1 (2023)",

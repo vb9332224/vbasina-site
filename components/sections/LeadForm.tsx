@@ -154,7 +154,7 @@ export function LeadForm({ id = "form" }: { id?: string }) {
         <a href={`mailto:${site.email}`} className="text-gold-500 hover:text-gold-300">
           {site.email}
         </a>{" "}
-        · @{site.telegram} · LinkedIn
+        · @{site.telegram}
       </p>
     </form>
   );

@@ -7,7 +7,7 @@ import { site } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Контакты — Basina & Partners",
   description:
-    "Email, Telegram, Instagram, LinkedIn. Офис в Ереване. ООО «Басина и партнёры», рег. 85.110.1476680.",
+    "Email, Telegram, Instagram. Офис в Ереване. ООО «Басина и партнёры», рег. 85.110.1476680.",
 };
 
 export default function ContactsPage() {
@@ -58,18 +58,6 @@ export default function ContactsPage() {
                 className="font-serif text-xl text-cream-100 hover:text-gold-300 transition-colors"
               >
                 @{site.instagram}
-              </a>
-            </div>
-
-            <div>
-              <p className="eyebrow mb-3">LinkedIn</p>
-              <a
-                href={`https://linkedin.com/in/${site.linkedin}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-serif text-xl text-cream-100 hover:text-gold-300 transition-colors"
-              >
-                linkedin.com/in/{site.linkedin}
               </a>
             </div>
 
