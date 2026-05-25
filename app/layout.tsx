@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site-config";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Analytics } from "@/components/analytics/Analytics";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -59,6 +60,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-cream-50 text-ink-900">
         <JsonLd />
         {children}
+        <Analytics />
       </body>
     </html>
   );
