@@ -2,16 +2,33 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { nav, site, ctaPrimaryHref, ctaPrimaryLabel } from "@/lib/site-config";
+import { site } from "@/lib/site-config";
+import { dict, t } from "@/lib/i18n/dict";
+import { Locale, localePath } from "@/lib/i18n/types";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-export function Header() {
+function navItems(locale: Locale) {
+  return [
+    { href: localePath(locale, "/about"), label: t(locale, (d) => d.nav.about) },
+    { href: localePath(locale, "/services"), label: t(locale, (d) => d.nav.services) },
+    { href: localePath(locale, "/cases"), label: t(locale, (d) => d.nav.cases) },
+    { href: localePath(locale, "/media"), label: t(locale, (d) => d.nav.media) },
+    { href: localePath(locale, "/contacts"), label: t(locale, (d) => d.nav.contacts) },
+  ];
+}
+
+export function Header({ locale = "ru" }: { locale?: Locale }) {
   const [open, setOpen] = useState(false);
+  const nav = navItems(locale);
+  const ctaHref = localePath(locale, "/contacts#form");
+  const ctaLabel = t(locale, (d) => d.ctaPrimary);
+  const mobileSticky = t(locale, (d) => d.ctaMobileSticky);
 
   return (
     <header className="sticky top-0 z-50 bg-navy-900 text-cream-100 border-b border-navy-800/60">
       <div className="container-x flex h-16 md:h-20 items-center justify-between gap-6">
         <Link
-          href="/"
+          href={localePath(locale, "/")}
           className="font-serif text-xl md:text-2xl text-gold-500 hover:text-gold-300 transition-colors tracking-tight"
           onClick={() => setOpen(false)}
         >
@@ -30,12 +47,15 @@ export function Header() {
           ))}
         </nav>
 
-        <Link
-          href={ctaPrimaryHref}
-          className="hidden md:inline-flex items-center bg-red-700 hover:bg-red-800 text-navy-900 text-sm font-medium px-4 py-2.5 font-semibold transition-colors"
-        >
-          {ctaPrimaryLabel}
-        </Link>
+        <div className="hidden md:flex items-center gap-5">
+          <LanguageSwitcher locale={locale} />
+          <Link
+            href={ctaHref}
+            className="inline-flex items-center bg-red-700 hover:bg-red-800 text-navy-900 text-sm font-medium px-4 py-2.5 font-semibold transition-colors"
+          >
+            {ctaLabel}
+          </Link>
+        </div>
 
         <button
           type="button"
@@ -71,22 +91,23 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="pt-2"><LanguageSwitcher locale={locale} /></div>
             <Link
-              href={ctaPrimaryHref}
+              href={ctaHref}
               className="mt-2 inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-navy-900 text-sm font-medium px-4 py-3 font-semibold transition-colors"
               onClick={() => setOpen(false)}
             >
-              {ctaPrimaryLabel}
+              {ctaLabel}
             </Link>
           </nav>
         </div>
       )}
 
       <a
-        href={ctaPrimaryHref}
+        href={ctaHref}
         className="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-red-700 hover:bg-red-800 text-navy-900 text-center text-sm font-medium py-3.5 font-semibold shadow-lg"
       >
-        Записаться на сессию →
+        {mobileSticky}
       </a>
 
       <span className="sr-only">{site.name}</span>

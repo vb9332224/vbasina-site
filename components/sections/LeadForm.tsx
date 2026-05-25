@@ -2,12 +2,25 @@
 
 import { useState, FormEvent } from "react";
 import { site } from "@/lib/site-config";
+import { dict, t } from "@/lib/i18n/dict";
+import { Locale, localePath } from "@/lib/i18n/types";
 
 type State = "idle" | "loading" | "success" | "error";
 
-export function LeadForm({ id = "form" }: { id?: string }) {
+export function LeadForm({
+  id = "form",
+  locale = "ru",
+}: {
+  id?: string;
+  locale?: Locale;
+}) {
   const [state, setState] = useState<State>("idle");
   const [error, setError] = useState<string | null>(null);
+
+  const errFallback =
+    locale === "ru" ? "Не удалось отправить. Попробуйте позже." : "Could not send. Please try again later.";
+  const errNetwork =
+    locale === "ru" ? "Сетевая ошибка. Попробуйте позже." : "Network error. Please try again later.";
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,18 +40,19 @@ export function LeadForm({ id = "form" }: { id?: string }) {
           message: String(data.message ?? ""),
           consent: data.consent === "on",
           website: String(data.website ?? ""),
+          locale,
         }),
       });
       const json = await res.json();
       if (!res.ok || !json.ok) {
-        setError(json?.error ?? "Не удалось отправить. Попробуйте позже.");
+        setError(json?.error ?? errFallback);
         setState("error");
         return;
       }
       setState("success");
       form.reset();
     } catch {
-      setError("Сетевая ошибка. Попробуйте позже.");
+      setError(errNetwork);
       setState("error");
     }
   }
@@ -46,10 +60,8 @@ export function LeadForm({ id = "form" }: { id?: string }) {
   if (state === "success") {
     return (
       <div id={id} className="bg-navy-800/40 border border-gold-500/40 p-8 text-cream-100">
-        <p className="font-serif text-2xl text-gold-500 mb-3">Заявка отправлена</p>
-        <p className="text-cream-100/80">
-          Наша команда свяжется с вами в течение рабочего дня.
-        </p>
+        <p className="font-serif text-2xl text-gold-500 mb-3">{t(locale, (d) => d.form.successTitle)}</p>
+        <p className="text-cream-100/80">{t(locale, (d) => d.form.successBody)}</p>
       </div>
     );
   }
@@ -58,7 +70,7 @@ export function LeadForm({ id = "form" }: { id?: string }) {
     <form id={id} onSubmit={onSubmit} className="space-y-5">
       {/* Honeypot — невидимое поле, заполняемое ботами. Люди его не видят. */}
       <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
-        <label htmlFor="lead-website">Сайт (не заполнять)</label>
+        <label htmlFor="lead-website">Website (do not fill)</label>
         <input
           id="lead-website"
           name="website"
@@ -69,52 +81,44 @@ export function LeadForm({ id = "form" }: { id?: string }) {
       </div>
 
       <div>
-        <label htmlFor="lead-name" className="sr-only">
-          Имя
-        </label>
+        <label htmlFor="lead-name" className="sr-only">{t(locale, (d) => d.form.name)}</label>
         <input
           id="lead-name"
           name="name"
           required
           autoComplete="name"
-          placeholder="Ваше имя"
+          placeholder={t(locale, (d) => d.form.name)}
           className="w-full bg-transparent border border-cream-100/20 focus:border-gold-500 outline-none px-4 py-3.5 text-cream-100 placeholder:text-cream-100/40 transition-colors"
         />
       </div>
       <div>
-        <label htmlFor="lead-email" className="sr-only">
-          Email
-        </label>
+        <label htmlFor="lead-email" className="sr-only">{t(locale, (d) => d.form.email)}</label>
         <input
           id="lead-email"
           name="email"
           type="email"
           required
           autoComplete="email"
-          placeholder="Email"
+          placeholder={t(locale, (d) => d.form.email)}
           className="w-full bg-transparent border border-cream-100/20 focus:border-gold-500 outline-none px-4 py-3.5 text-cream-100 placeholder:text-cream-100/40 transition-colors"
         />
       </div>
       <div>
-        <label htmlFor="lead-contact" className="sr-only">
-          Telegram или телефон
-        </label>
+        <label htmlFor="lead-contact" className="sr-only">{t(locale, (d) => d.form.contact)}</label>
         <input
           id="lead-contact"
           name="contact"
-          placeholder="Telegram или телефон (опционально)"
+          placeholder={t(locale, (d) => d.form.contact)}
           className="w-full bg-transparent border border-cream-100/20 focus:border-gold-500 outline-none px-4 py-3.5 text-cream-100 placeholder:text-cream-100/40 transition-colors"
         />
       </div>
       <div>
-        <label htmlFor="lead-message" className="sr-only">
-          Задача
-        </label>
+        <label htmlFor="lead-message" className="sr-only">{t(locale, (d) => d.form.message)}</label>
         <textarea
           id="lead-message"
           name="message"
           rows={4}
-          placeholder="О какой задаче хотели бы поговорить"
+          placeholder={t(locale, (d) => d.form.message)}
           className="w-full bg-transparent border border-cream-100/20 focus:border-gold-500 outline-none px-4 py-3.5 text-cream-100 placeholder:text-cream-100/40 transition-colors resize-y"
         />
       </div>
@@ -127,9 +131,12 @@ export function LeadForm({ id = "form" }: { id?: string }) {
           className="mt-1 accent-gold-500 w-4 h-4 shrink-0"
         />
         <span>
-          Согласен на обработку персональных данных в соответствии с{" "}
-          <a href="/privacy" className="text-gold-500 hover:text-gold-300 underline-offset-4 hover:underline">
-            политикой конфиденциальности
+          {t(locale, (d) => d.form.consent)}{" "}
+          <a
+            href={localePath(locale, "/privacy")}
+            className="text-gold-500 hover:text-gold-300 underline-offset-4 hover:underline"
+          >
+            {t(locale, (d) => d.form.consentLink)}
           </a>
           .
         </span>
@@ -146,11 +153,11 @@ export function LeadForm({ id = "form" }: { id?: string }) {
         disabled={state === "loading"}
         className="w-full bg-red-700 hover:bg-red-800 disabled:opacity-60 disabled:cursor-not-allowed text-navy-900 px-6 py-4 text-base font-semibold tracking-wide transition-colors"
       >
-        {state === "loading" ? "Отправляем…" : "Записаться на сессию →"}
+        {state === "loading" ? t(locale, (d) => d.form.sending) : t(locale, (d) => d.form.submit)}
       </button>
 
       <p className="text-xs text-cream-100/60 text-center pt-2">
-        Или напишите напрямую:{" "}
+        {t(locale, (d) => d.form.or)}{" "}
         <a href={`mailto:${site.email}`} className="text-gold-500 hover:text-gold-300">
           {site.email}
         </a>{" "}

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { nav, site } from "@/lib/site-config";
+import { site } from "@/lib/site-config";
+import { dict, t } from "@/lib/i18n/dict";
+import { Locale, localePath } from "@/lib/i18n/types";
 
 const footerRegalia = [
   "Dubai International Award №1",
@@ -16,7 +18,15 @@ const footerRegalia = [
   "ТПП РФ",
 ];
 
-export function Footer() {
+export function Footer({ locale = "ru" }: { locale?: Locale }) {
+  const nav = [
+    { href: localePath(locale, "/about"), label: t(locale, (d) => d.nav.about) },
+    { href: localePath(locale, "/services"), label: t(locale, (d) => d.nav.services) },
+    { href: localePath(locale, "/cases"), label: t(locale, (d) => d.nav.cases) },
+    { href: localePath(locale, "/media"), label: t(locale, (d) => d.nav.media) },
+    { href: localePath(locale, "/contacts"), label: t(locale, (d) => d.nav.contacts) },
+  ];
+
   return (
     <footer className="bg-navy-900 text-cream-100/90 border-t border-navy-800/60">
       <div className="container-x py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -35,7 +45,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="eyebrow mb-4">Навигация</h4>
+          <h4 className="eyebrow mb-4">{t(locale, (d) => d.footer.nav)}</h4>
           <ul className="space-y-2.5 text-sm">
             {nav.map((item) => (
               <li key={item.href}>
@@ -48,7 +58,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="eyebrow mb-4">Контакты</h4>
+          <h4 className="eyebrow mb-4">{t(locale, (d) => d.footer.contacts)}</h4>
           <ul className="space-y-2.5 text-sm">
             <li>
               <a href={`mailto:${site.email}`} className="hover:text-gold-300 transition-colors">
@@ -79,16 +89,16 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="eyebrow mb-4">Документы</h4>
+          <h4 className="eyebrow mb-4">{t(locale, (d) => d.footer.docs)}</h4>
           <ul className="space-y-2.5 text-sm">
             <li>
-              <Link href="/privacy" className="hover:text-gold-300 transition-colors">
-                Политика конфиденциальности
+              <Link href={localePath(locale, "/privacy")} className="hover:text-gold-300 transition-colors">
+                {t(locale, (d) => d.footer.privacy)}
               </Link>
             </li>
             <li>
-              <Link href="/offer" className="hover:text-gold-300 transition-colors">
-                Оферта
+              <Link href={localePath(locale, "/offer")} className="hover:text-gold-300 transition-colors">
+                {t(locale, (d) => d.footer.offer)}
               </Link>
             </li>
           </ul>

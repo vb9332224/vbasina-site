@@ -1,86 +1,73 @@
 import { Reveal } from "@/components/ui/Reveal";
+import { dict, t } from "@/lib/i18n/dict";
+import { Locale } from "@/lib/i18n/types";
 
-const promises = [
-  {
-    n: "01",
-    title: "Доход",
-    body:
-      "Гарантируем максимальный уровень дохода собственника земли, который невозможно получить без нас — с учётом любого альтернативного способа использования участка. Тезис применим не только к долгосрочной перспективе, но и к каждому этапу развития проекта.",
-    epigraph: "Мы — люди дела и для дела.",
-  },
-  {
-    n: "02",
-    title: "Технологичность",
-    body:
-      "ESG, LEED, BIM (ТИМ), carbon-free — для нас не просто слова. Используем современные технологии и последние достижения науки, адаптируем под российские реалии и внедряем с опережением других участников рынка. Готовим собственный НИОКР для малоэтажного строительства.",
-    epigraph: "Сможете повторить? То-то же.",
-  },
-  {
-    n: "03",
-    title: "Эстетика",
-    body:
-      "Всё, ЧТО и КАК мы делаем — эстетически приятно, красиво, радует все органы чувств, вызывает гордость обладанием и вдохновляет на свершения. Наши проекты не просто комфортны — они задают тон и стиль жизни, развивают чувство прекрасного.",
-    epigraph: "Будешь гордиться.",
-  },
-];
+export function Manifesto({ locale = "ru" }: { locale?: Locale }) {
+  const promises = [
+    {
+      n: "01",
+      title: t(locale, (d) => d.manifesto.p1Title),
+      body: t(locale, (d) => d.manifesto.p1Body),
+      epigraph: t(locale, (d) => d.manifesto.p1Quote),
+    },
+    {
+      n: "02",
+      title: t(locale, (d) => d.manifesto.p2Title),
+      body: t(locale, (d) => d.manifesto.p2Body),
+      epigraph: t(locale, (d) => d.manifesto.p2Quote),
+    },
+    {
+      n: "03",
+      title: t(locale, (d) => d.manifesto.p3Title),
+      body: t(locale, (d) => d.manifesto.p3Body),
+      epigraph: t(locale, (d) => d.manifesto.p3Quote),
+    },
+  ];
+  const values = [
+    {
+      title: t(locale, (d) => d.manifesto.v1Title),
+      body: t(locale, (d) => d.manifesto.v1Body),
+    },
+    {
+      title: t(locale, (d) => d.manifesto.v2Title),
+      body: t(locale, (d) => d.manifesto.v2Body),
+    },
+    {
+      title: t(locale, (d) => d.manifesto.v3Title),
+      body: t(locale, (d) => d.manifesto.v3Body),
+    },
+  ];
 
-const values = [
-  {
-    title: "Прозрачность взаимодействия",
-    body:
-      "Никаких подводных камней, мелких шрифтов, невыполненных обещаний и недоговорённостей. Тайминг, статус задач, документы — всегда прозрачно и доступно для контроля. Сказали — сделали.",
-  },
-  {
-    title: "Primum non nocere — не навреди",
-    body:
-      "Наша компания, сотрудники и проекты не ущемляют чьих-либо прав ни в юридическом, ни в моральном аспекте. Не участвуем в противоправных и аморальных действиях, не наносим вред рынку, партнёрам, окружающей среде — только честная борьба по правилам.",
-  },
-  {
-    title: "Trendspotting & Trendsetting",
-    body:
-      "Мы не догоняем тренды — мы их выявляем и создаём. «Приземляем» их в контекст и реалии места и времени, популяризируем. Наши продукты создаются для долговременного использования, мы работаем кроме актуального ещё и с симбиозом вечного и будущего.",
-  },
-];
-
-export function Manifesto() {
   return (
     <section className="bg-cream-50">
       <div className="container-x py-24 md:py-32">
         <Reveal>
-          <p className="eyebrow mb-5">— Кто такие Basina &amp; Partners</p>
+          <p className="eyebrow mb-5">{t(locale, (d) => d.manifesto.eyebrow)}</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-navy-900 leading-tight max-w-4xl">
-            Мы — продюсерская компания.<br />
-            <span className="text-gold-500">Землепродюсеры.</span>{" "}
-            <span className="text-navy-700">Development producers.</span>
+            {t(locale, (d) => d.manifesto.title1)}<br />
+            <span className="text-gold-500">{t(locale, (d) => d.manifesto.title2)}</span>{" "}
+            <span className="text-navy-700">{t(locale, (d) => d.manifesto.title3)}</span>
           </h2>
           <p className="mt-8 text-base md:text-lg text-navy-900/80 leading-relaxed max-w-3xl">
-            Работаем на стыке функций fi-девелопера, финансового брокера, архитектурного бюро,
-            управляющей компании и консалтинга в области маркетинга и продаж. Наши проекты
-            создают и поддерживают высокую культуру малоэтажной застройки, домовладения и
-            добрососедства. Берём ответственность быть амбассадорами комфортабельного ИЖС и
-            «зелёного» строительства по стандартам ESG, с перспективой выхода на уникальный для
-            рынка стандарт carbon-free.
+            {t(locale, (d) => d.manifesto.intro)}
           </p>
         </Reveal>
 
         <Reveal delay={0.08}>
           <div className="mt-12 grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-14 items-start border-t border-navy-900/15 pt-12">
             <div>
-              <p className="eyebrow mb-3 text-navy-900/60">Наша миссия</p>
+              <p className="eyebrow mb-3 text-navy-900/60">{t(locale, (d) => d.manifesto.missionLabel)}</p>
               <p className="font-serif text-2xl md:text-3xl lg:text-[34px] text-navy-900 leading-[1.15]">
-                Постоянно развивать культуру малоэтажного индивидуального строительства и
-                проживания за городом.
+                {t(locale, (d) => d.manifesto.mission)}
               </p>
             </div>
             <div>
-              <p className="eyebrow mb-3 text-navy-900/60">Слоган</p>
+              <p className="eyebrow mb-3 text-navy-900/60">{t(locale, (d) => d.manifesto.sloganLabel)}</p>
               <p className="font-serif text-3xl md:text-4xl lg:text-[44px] text-gold-500 leading-tight">
-                Делаем&nbsp;проекты-звёзды.
+                {t(locale, (d) => d.manifesto.slogan)}
               </p>
               <p className="mt-4 text-sm text-navy-900/70 leading-relaxed max-w-md">
-                Звезда — проект, который выделяется на рынке, приносит доход собственнику и
-                оставляет наследие сообществу. Каждая наша работа целит именно туда: в проекты
-                с долгой ценностной памятью.
+                {t(locale, (d) => d.manifesto.sloganBody)}
               </p>
             </div>
           </div>
@@ -88,9 +75,9 @@ export function Manifesto() {
 
         <div className="mt-16 md:mt-20">
           <Reveal>
-            <p className="eyebrow mb-3">— Три обещания бренда</p>
+            <p className="eyebrow mb-3">{t(locale, (d) => d.manifesto.promisesEyebrow)}</p>
             <h3 className="font-serif text-2xl md:text-3xl text-navy-900 leading-tight">
-              Что вы получаете от партнёрства с нами
+              {t(locale, (d) => d.manifesto.promisesTitle)}
             </h3>
           </Reveal>
 
@@ -112,9 +99,9 @@ export function Manifesto() {
 
         <div className="mt-16 md:mt-20">
           <Reveal>
-            <p className="eyebrow mb-3">— Атрибуты и ценности</p>
+            <p className="eyebrow mb-3">{t(locale, (d) => d.manifesto.valuesEyebrow)}</p>
             <h3 className="font-serif text-2xl md:text-3xl text-navy-900 leading-tight">
-              Три принципа, которые держат всю работу
+              {t(locale, (d) => d.manifesto.valuesTitle)}
             </h3>
           </Reveal>
 

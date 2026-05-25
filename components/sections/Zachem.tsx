@@ -1,42 +1,39 @@
 import { Reveal } from "@/components/ui/Reveal";
+import { dict, t } from "@/lib/i18n/dict";
+import { Locale } from "@/lib/i18n/types";
 
-const cards = [
-  {
-    n: "01",
-    title: "Первое в России проектное финансирование ИЖС",
-    body:
-      "28.12.2020 — Банк ДОМ.РФ подписал с нами первый в стране кредитный договор по проектному финансированию индивидуального жилищного строительства. До этого момента ни одна российская компания не могла получить банк под ИЖС. Мы открыли категорию.",
-    metric: "2,1 млрд ₽ привлечено",
-  },
-  {
-    n: "02",
-    title: "Работа на стыке регулятора и рынка",
-    body:
-      "17 лет одновременно в коммерческом девелопменте и в реформе регулирования. Через Комитет РСС инициировали государственный Фонд защиты прав дольщиков (фонд работает по сей день). На OPENDEVELOP.RU проверили 2 285 застройщиков по 40 параметрам.",
-    metric: "Государственный Фонд РФ",
-  },
-  {
-    n: "03",
-    title: "Метод Басиной и Гергель",
-    body:
-      "Авторский метод проектирования девелопера через 8 слоёв (предназначение, душа, вкус, цвет, запах, ритм, звук, осязание). Превращает участок земли не в гектары, а в живой продукт, который выбирают и инвесторы, и жители. Применяется к каждому новому проекту.",
-    metric: "8 проектных артефактов",
-  },
-];
+export function Zachem({ locale = "ru" }: { locale?: Locale }) {
+  const cards = [
+    {
+      n: "01",
+      title: t(locale, (d) => d.zachem.c1Title),
+      body: t(locale, (d) => d.zachem.c1Body),
+      metric: t(locale, (d) => d.zachem.c1Metric),
+    },
+    {
+      n: "02",
+      title: t(locale, (d) => d.zachem.c2Title),
+      body: t(locale, (d) => d.zachem.c2Body),
+      metric: t(locale, (d) => d.zachem.c2Metric),
+    },
+    {
+      n: "03",
+      title: t(locale, (d) => d.zachem.c3Title),
+      body: t(locale, (d) => d.zachem.c3Body),
+      metric: t(locale, (d) => d.zachem.c3Metric),
+    },
+  ];
 
-export function Zachem() {
   return (
     <section className="bg-cream-100">
       <div className="container-x py-24 md:py-32 grid lg:grid-cols-5 gap-12 lg:gap-20">
         <Reveal className="lg:col-span-2 lg:sticky lg:top-28 lg:self-start">
-          <p className="eyebrow mb-5">— Что нас отличает</p>
+          <p className="eyebrow mb-5">{t(locale, (d) => d.zachem.eyebrow)}</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-navy-900 leading-tight">
-            Три причины, по которым нас зовут банки, министры и владельцы земли
+            {t(locale, (d) => d.zachem.title)}
           </h2>
           <p className="mt-6 text-grey-500 leading-relaxed">
-            На рынке консалтинга в недвижимости много компаний. Сильное позиционирование в этой
-            среде создаётся не словами, а уникальной комбинацией опыта, инструментов и связей,
-            которой нет у других.
+            {t(locale, (d) => d.zachem.body)}
           </p>
         </Reveal>
 

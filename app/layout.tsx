@@ -44,6 +44,14 @@ export const metadata: Metadata = {
     description: "Землепродюсеры. 17 лет в недвижимости. Делаем проекты-звёзды.",
   },
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: "/",
+    languages: {
+      ru: "/",
+      en: "/en",
+      "x-default": "/",
+    },
+  },
 };
 
 export const viewport: Viewport = {

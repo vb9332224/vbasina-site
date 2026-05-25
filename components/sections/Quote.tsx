@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import { dict, t } from "@/lib/i18n/dict";
+import { Locale, localePath } from "@/lib/i18n/types";
 
-export function Quote() {
+export function Quote({ locale = "ru" }: { locale?: Locale }) {
   return (
     <section className="bg-navy-900 text-cream-100">
       <div className="container-x py-24 md:py-32 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -21,23 +23,18 @@ export function Quote() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="eyebrow mb-6">— Кто за этим стоит</p>
+          <p className="eyebrow mb-6">{t(locale, (d) => d.quote.eyebrow)}</p>
           <blockquote className="font-serif text-2xl md:text-3xl lg:text-[34px] leading-snug text-cream-100">
             <span className="text-gold-500 font-serif text-5xl leading-none mr-2 align-top">“</span>
-            Я не борюсь с системой. Я создаю новое там, где этого ещё нет — и нахожу обходные пути
-            там, где старое не работает. 17 лет это делаю в разных отраслях. И буду делать дальше.
+            {t(locale, (d) => d.quote.text)}
           </blockquote>
-          <p className="mt-8 text-sm text-cream-100/70">
-            — Виолетта Басина, основатель Basina &amp; Partners
-          </p>
-          <p className="mt-2 text-xs text-cream-100/50">
-            Действительный член МАИН · Кавалер знака «Строительная Слава» · Лауреат Dubai Award 2023
-          </p>
+          <p className="mt-8 text-sm text-cream-100/70">{t(locale, (d) => d.quote.sig)}</p>
+          <p className="mt-2 text-xs text-cream-100/50">{t(locale, (d) => d.quote.micro)}</p>
           <Link
-            href="/about"
+            href={localePath(locale, "/about")}
             className="inline-block mt-8 text-gold-500 hover:text-gold-300 underline-offset-4 hover:underline transition-colors"
           >
-            Полная биография →
+            {t(locale, (d) => d.quote.biography)}
           </Link>
         </Reveal>
       </div>
