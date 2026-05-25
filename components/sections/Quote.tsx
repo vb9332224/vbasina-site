@@ -37,7 +37,7 @@ export function Quote() {
             href="/about"
             className="inline-block mt-8 text-gold-500 hover:text-gold-300 underline-offset-4 hover:underline transition-colors"
           >
-            Полная биография и 17 лет в бизнесе →
+            Полная биография →
           </Link>
         </Reveal>
       </div>

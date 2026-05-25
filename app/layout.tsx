@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Создаём индустрии. Защищаем активы. Запускаем продукты с нуля. 17 лет в бизнесе. Россия, Армения, Кыргызстан.",
+    "Делаем проекты-звёзды. Землепродюсеры. 17 лет в недвижимости. Россия, Армения, Кыргызстан, Азербайджан, Таджикистан.",
   applicationName: site.name,
   authors: [{ name: site.founder.fullName }],
   openGraph: {
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — стратегический консалтинг`,
     description:
-      "Создаём индустрии. Защищаем активы. Запускаем продукты с нуля. 17 лет в бизнесе.",
+      "Делаем проекты-звёзды. Землепродюсеры. 17 лет в недвижимости.",
   },
   twitter: {
     card: "summary_large_image",
     title: site.name,
-    description: "Стратегический консалтинг. 17 лет в бизнесе.",
+    description: "Землепродюсеры. 17 лет в недвижимости. Делаем проекты-звёзды.",
   },
   robots: { index: true, follow: true },
 };

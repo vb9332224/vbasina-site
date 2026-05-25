@@ -68,7 +68,11 @@ const storyChapters = [
 
 const figuresBlock = [
   { v: "150+", label: "придуманных и реализованных проектов" },
-  { v: "17 лет", label: "в бизнесе" },
+  {
+    v: "17 лет",
+    label:
+      "в недвижимости: строительство, управление, продажи, маркетинг, фи-девелопмент, девелопмент",
+  },
 ];
 
 export default function AboutPage() {
@@ -185,10 +189,10 @@ export default function AboutPage() {
 
           <div className="mt-16 text-center">
             <Link
-              href="/experience"
+              href="/services"
               className="inline-block text-gold-500 hover:text-gold-300 underline-offset-4 hover:underline transition-colors"
             >
-              17 лет в бизнесе — портфель компаний и проектов →
+              К списку услуг →
             </Link>
           </div>
         </div>
