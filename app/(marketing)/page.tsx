@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
+import { Manifesto } from "@/components/sections/Manifesto";
 import { Zachem } from "@/components/sections/Zachem";
 import { DlyaKogo } from "@/components/sections/DlyaKogo";
 import { Pochemu } from "@/components/sections/Pochemu";
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustBar />
+      <Manifesto />
       <Zachem />
       <DlyaKogo />
       <Pochemu />
