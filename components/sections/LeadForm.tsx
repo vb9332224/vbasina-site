@@ -26,6 +26,7 @@ export function LeadForm({ id = "form" }: { id?: string }) {
           contact: String(data.contact ?? ""),
           message: String(data.message ?? ""),
           consent: data.consent === "on",
+          website: String(data.website ?? ""),
         }),
       });
       const json = await res.json();
@@ -56,6 +57,18 @@ export function LeadForm({ id = "form" }: { id?: string }) {
 
   return (
     <form id={id} onSubmit={onSubmit} className="space-y-5">
+      {/* Honeypot — невидимое поле, заполняемое ботами. Люди его не видят. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+        <label htmlFor="lead-website">Сайт (не заполнять)</label>
+        <input
+          id="lead-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div>
         <label htmlFor="lead-name" className="sr-only">
           Имя
