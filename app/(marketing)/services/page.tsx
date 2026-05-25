@@ -120,13 +120,14 @@ export default function ServicesPage() {
       <section className="bg-navy-900 text-cream-100">
         <div className="container-x py-20 md:py-28 text-center">
           <Reveal>
-            <p className="eyebrow mb-4">— Не знаете что выбрать?</p>
+            <p className="eyebrow mb-4">— С чего начать</p>
             <h2 className="font-serif text-3xl md:text-4xl text-cream-100 mb-6 max-w-3xl mx-auto leading-tight">
-              Запишитесь на бесплатное знакомство — 15 минут
+              Бесплатная 15-минутная встреча-знакомство
             </h2>
-            <p className="text-cream-100/75 max-w-2xl mx-auto mb-8">
-              Расскажете о задаче — я подскажу, какой формат подходит и стоит ли начинать вообще.
-              Без обязательств.
+            <p className="text-cream-100/75 max-w-2xl mx-auto mb-8 leading-relaxed">
+              Чтобы понять, будем ли мы для вас эффективны и полезны. Расскажете о задаче — мы
+              честно ответим: подходим ли мы под ваш кейс, какой формат сотрудничества имеет
+              смысл, и стоит ли начинать вообще. Без обязательств.
             </p>
             <Button href="/contacts#form">Записаться на знакомство →</Button>
           </Reveal>

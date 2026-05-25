@@ -8,7 +8,7 @@ export function CtaBlock() {
         <Reveal>
           <p className="eyebrow mb-5">— Готовы начать?</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream-100 leading-tight">
-            Стратегическая сессия — 90 минут разговора лично со мной
+            Стратегическая сессия — 90 минут, без обязательств
           </h2>
           <p className="mt-6 text-cream-100/75 leading-relaxed max-w-xl">
             Без обязательств. По итогам — понимание, что делать дальше: запустить полный цикл,

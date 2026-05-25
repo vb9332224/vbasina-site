@@ -45,7 +45,7 @@ export function Hero() {
                 Записаться на стратегическую сессию →
               </Button>
               <Button href="/about" variant="ghost-gold">
-                Узнать больше о Виолетте →
+                Узнать больше о компании →
               </Button>
             </div>
           </Reveal>

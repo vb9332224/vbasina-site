@@ -154,7 +154,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow mb-5">— Награды и регалии</p>
             <h2 className="font-serif text-3xl md:text-4xl text-cream-100 mb-12">
-              Полный список — 17 регалий и наград
+              За это время удостоена наградами <span className="text-gold-300/70 italic font-normal">(это не полный список)</span>
             </h2>
           </Reveal>
 
@@ -199,7 +199,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow mb-4">— Записаться</p>
             <h2 className="font-serif text-3xl md:text-4xl text-navy-900 mb-6 max-w-3xl mx-auto leading-tight">
-              Стратегическая сессия с Виолеттой — 90 минут лично
+              Стратегическая сессия — 90 минут лично
             </h2>
             <p className="text-grey-500 max-w-2xl mx-auto mb-8">
               Без обязательств. По итогам — понимание, что делать дальше: запустить полный цикл,

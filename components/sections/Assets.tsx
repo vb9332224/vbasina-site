@@ -8,12 +8,11 @@ export function Assets() {
         <Reveal>
           <p className="eyebrow mb-5">— Активы и инфраструктура</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-navy-900 leading-tight max-w-3xl">
-            17 лет — это не одна компания.<br />
-            Это <span className="text-gold-500">шесть параллельных бизнесов</span>, ставших школой.
+            17 лет — это <span className="text-gold-500">150+ проектов</span> в шести индустриях.
           </h2>
           <p className="mt-6 text-grey-500 leading-relaxed max-w-2xl">
-            Часть из этих активов проданы, часть закрыты — но каждый дал ключевой опыт, который
-            сегодня работает на клиентов Basina&nbsp;&amp;&nbsp;Partners.
+            Часть активов проданы, часть закрыты — но каждый дал ключевой опыт, который сегодня
+            работает на клиентов Basina&nbsp;&amp;&nbsp;Partners. Ниже — основные.
           </p>
         </Reveal>
 
