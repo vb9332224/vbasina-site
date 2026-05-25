@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
@@ -51,6 +52,21 @@ export default async function CasePage({
         </div>
       </PageHero>
 
+      {c.hero && (
+        <section className="bg-navy-900">
+          <div className="relative aspect-[21/9] md:aspect-[21/8] w-full overflow-hidden">
+            <Image
+              src={c.hero.src}
+              alt={c.hero.alt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        </section>
+      )}
+
       <article className="bg-cream-50">
         <div className="container-x py-20 md:py-28 grid lg:grid-cols-5 gap-10 lg:gap-16">
           <aside className="lg:col-span-1">
@@ -58,6 +74,9 @@ export default async function CasePage({
               {[
                 { id: "context", label: "Контекст" },
                 { id: "actions", label: "Что мы сделали" },
+                ...(c.gallery && c.gallery.length > 0
+                  ? [{ id: "gallery", label: "Объект" }]
+                  : []),
                 { id: "results", label: "Результат" },
                 { id: "transferable", label: "Что это даёт" },
                 { id: "confirmations", label: "Подтверждения" },
@@ -96,6 +115,34 @@ export default async function CasePage({
                 </ul>
               </section>
             </Reveal>
+
+            {c.gallery && c.gallery.length > 0 && (
+              <Reveal>
+                <section id="gallery" className="scroll-mt-24">
+                  <h2 className="font-serif text-2xl md:text-3xl text-navy-900 mb-6">Объект</h2>
+                  <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+                    {c.gallery.map((g) => (
+                      <figure key={g.src} className="group">
+                        <div className="relative aspect-[3/2] bg-navy-900 overflow-hidden">
+                          <Image
+                            src={g.src}
+                            alt={g.alt}
+                            fill
+                            sizes="(min-width: 640px) 50vw, 100vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                          />
+                        </div>
+                        {g.caption && (
+                          <figcaption className="mt-3 text-sm text-grey-500 leading-snug">
+                            {g.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    ))}
+                  </div>
+                </section>
+              </Reveal>
+            )}
 
             <Reveal>
               <section id="results" className="scroll-mt-24 bg-navy-900 text-cream-100 p-8 md:p-10">

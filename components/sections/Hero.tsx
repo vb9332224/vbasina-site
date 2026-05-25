@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -56,18 +57,15 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.2} className="lg:col-span-2">
-          <div className="relative aspect-[3/4] max-w-[420px] mx-auto lg:ml-auto lg:mr-0 border border-gold-500/30 bg-navy-800/40 backdrop-blur-sm">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center px-6">
-                <div className="font-serif text-[120px] leading-none text-gold-500/90">ВБ</div>
-                <p className="mt-4 text-xs uppercase tracking-[0.18em] text-cream-100/50">
-                  Виолетта Басина
-                </p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-cream-100/30">
-                  Фото · placeholder
-                </p>
-              </div>
-            </div>
+          <div className="relative aspect-[3/4] max-w-[420px] mx-auto lg:ml-auto lg:mr-0 border border-gold-500/30 bg-navy-800/40 overflow-hidden">
+            <Image
+              src="/images/portraits/violetta-hero.webp"
+              alt="Виолетта Басина — основатель Basina & Partners"
+              fill
+              priority
+              sizes="(min-width: 1024px) 420px, (min-width: 768px) 50vw, 100vw"
+              className="object-cover object-top"
+            />
             <span className="absolute -top-px -left-px w-8 h-8 border-t-2 border-l-2 border-gold-500" />
             <span className="absolute -top-px -right-px w-8 h-8 border-t-2 border-r-2 border-gold-500" />
             <span className="absolute -bottom-px -left-px w-8 h-8 border-b-2 border-l-2 border-gold-500" />

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
@@ -35,16 +36,28 @@ export default function CasesPage() {
                   className="group block border border-navy-900/15 hover:border-gold-500/60 bg-white transition-colors h-full"
                 >
                   <div className="aspect-[16/9] bg-navy-900 relative overflow-hidden flex items-center justify-center">
-                    <div
-                      className="absolute inset-0 opacity-[0.10]"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(135deg, var(--color-gold-500) 0px, transparent 60%)",
-                      }}
-                    />
-                    <p className="font-serif text-xl text-gold-500/80 uppercase tracking-[0.2em]">
-                      Фото · placeholder
-                    </p>
+                    {c.cover ? (
+                      <Image
+                        src={c.cover.src}
+                        alt={c.cover.alt}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    ) : (
+                      <>
+                        <div
+                          className="absolute inset-0 opacity-[0.10]"
+                          style={{
+                            backgroundImage:
+                              "linear-gradient(135deg, var(--color-gold-500) 0px, transparent 60%)",
+                          }}
+                        />
+                        <p className="font-serif text-xl text-gold-500/80 uppercase tracking-[0.2em]">
+                          Фото · placeholder
+                        </p>
+                      </>
+                    )}
                   </div>
                   <div className="p-7 md:p-9">
                     <p className="text-xs uppercase tracking-[0.14em] text-gold-500 mb-3">

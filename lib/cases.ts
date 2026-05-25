@@ -3,6 +3,7 @@ export type CasePreview = {
   title: string;
   meta: string;
   excerpt: string;
+  cover?: { src: string; alt: string };
 };
 
 export const casesPreview: CasePreview[] = [
@@ -15,10 +16,14 @@ export const casesPreview: CasePreview[] = [
   },
   {
     slug: "nork-marash",
-    title: "Норк-Мараш Апарт-Отель — действующий проект в Ереване",
-    meta: "2026 · 527 апартаментов · 4 500 м² · Категория IV",
+    title: "BGM Residence — апарт-отель в Ереване",
+    meta: "2026 · 527 апартаментов · Норк-Мараш · Категория IV",
     excerpt:
       "Девелоперский проект апарт-отеля в Ереване. Структурирование сделки, привлечение армянских банков, маркетинг для русскоязычного релокант-капитала.",
+    cover: {
+      src: "/images/nork-marash/view-ararat.png",
+      alt: "Вид на Арарат из апартаментов BGM Residence",
+    },
   },
   {
     slug: "dolschiki-reform",

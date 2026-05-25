@@ -1,9 +1,14 @@
+export type CaseImage = { src: string; alt: string; caption?: string };
+
 export type CaseFull = {
   slug: string;
   title: string;
   subtitle: string;
   period: string;
   metrics: string[];
+  cover?: CaseImage;
+  hero?: CaseImage;
+  gallery?: CaseImage[];
   context: string;
   actions: string[];
   results: string[];
@@ -53,13 +58,43 @@ export const casesFull: CaseFull[] = [
   {
     slug: "nork-marash",
     title: "Девелопмент апарт-отеля в Ереване — выход на новый рынок",
-    subtitle: "Норк-Мараш Апарт-Отель — действующий проект в Армении",
+    subtitle: "BGM Residence — действующий проект в Армении",
     period: "2026 — по настоящее время",
     metrics: [
       "527 апартаментов",
-      "4 500 м²",
+      "Норк-Мараш, Ереван",
       "Категория IV",
-      "Ереван, Норк-Мараш",
+      "Ввод 2028",
+    ],
+    cover: {
+      src: "/images/nork-marash/view-ararat.png",
+      alt: "Вид на Арарат из апартаментов BGM Residence",
+    },
+    hero: {
+      src: "/images/nork-marash/exterior.png",
+      alt: "Фасад BGM Residence на фоне Арарата",
+    },
+    gallery: [
+      {
+        src: "/images/nork-marash/view-ararat.png",
+        alt: "Вид на Арарат из спальни апартамента",
+        caption: "Вид на Арарат из спальни — все апартаменты ориентированы на закатную сторону.",
+      },
+      {
+        src: "/images/nork-marash/apartment-22.png",
+        alt: "Премиум-апартамент 22 м²",
+        caption: "Премиум-формат 22 м² — кухня, спальня, гостиная зона.",
+      },
+      {
+        src: "/images/nork-marash/bar.png",
+        alt: "Ресторан и бар BGM Residence",
+        caption: "Резидентский ресторан и бар на первом уровне.",
+      },
+      {
+        src: "/images/nork-marash/pool.png",
+        alt: "Бассейн и фитнес-зона BGM Residence",
+        caption: "Спа-уровень: бассейн и фитнес-клуб для резидентов.",
+      },
     ],
     context:
       "В 2024 году после ситуации с ГК «Омакульма» в России возникла задача — продолжить девелоперскую деятельность за её пределами. Армения как открытый рынок с растущим туристическим и релокант-сегментом стала естественным выбором. Армянский рынок гостеприимства требует современного формата апарт-отелей IV категории — таких объектов мало.",
