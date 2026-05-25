@@ -124,7 +124,7 @@ export function LeadForm({ id = "form" }: { id?: string }) {
       </label>
 
       {error && (
-        <p className="text-sm text-red-700 bg-red-700/10 border border-red-700/40 px-4 py-3">
+        <p className="text-sm text-[#A8302A] bg-[#A8302A]/10 border border-[#A8302A]/40 px-4 py-3">
           {error}
         </p>
       )}
@@ -132,7 +132,7 @@ export function LeadForm({ id = "form" }: { id?: string }) {
       <button
         type="submit"
         disabled={state === "loading"}
-        className="w-full bg-red-700 hover:bg-red-800 disabled:opacity-60 disabled:cursor-not-allowed text-white border border-gold-500/60 px-6 py-4 text-base font-medium tracking-wide transition-colors"
+        className="w-full bg-red-700 hover:bg-red-800 disabled:opacity-60 disabled:cursor-not-allowed text-navy-900 px-6 py-4 text-base font-semibold tracking-wide transition-colors"
       >
         {state === "loading" ? "Отправляем…" : "Записаться на сессию →"}
       </button>

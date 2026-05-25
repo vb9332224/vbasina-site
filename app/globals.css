@@ -1,19 +1,26 @@
 @import "tailwindcss";
 
+/*
+ * Палитра i2O — Brand Platform 2021.
+ * Эстетика #576730 (оливковый), Доход #F1CD8C (песочный),
+ * Технологичность #F2F0F2 (off-white). См. брендбук, стр. 28.
+ * Имена токенов оставлены прежними (navy/gold/cream/red) для совместимости
+ * с уже написанной разметкой; смысл — в значениях.
+ */
 @theme {
-  --color-navy-900: #0B2545;
-  --color-navy-800: #13315C;
-  --color-navy-700: #1B3F75;
-  --color-gold-500: #B89B5E;
-  --color-gold-300: #D4BA7F;
-  --color-gold-200: #E4D2A4;
-  --color-cream-100: #F5EBD8;
-  --color-cream-50: #F8F6F2;
-  --color-red-700: #A8302A;
-  --color-red-800: #8E2723;
-  --color-ink-900: #0F1419;
-  --color-grey-500: #8A8F95;
-  --color-grey-300: #C9CDD2;
+  --color-navy-900: #576730;  /* было #0B2545 — теперь Эстетика, тёмный оливковый */
+  --color-navy-800: #455325;  /* углублённый оливковый для футера/контраста */
+  --color-navy-700: #6B7C3C;  /* осветлённый оливковый для hover */
+  --color-gold-500: #F1CD8C;  /* было #B89B5E — теперь Доход, песочный */
+  --color-gold-300: #F8DEAF;  /* осветлённый песочный */
+  --color-gold-200: #FBE9CC;  /* самый светлый песочный */
+  --color-cream-100: #EAE7E7; /* Технологичность — off-white темнее */
+  --color-cream-50: #F2F0F2;  /* Технологичность — основной off-white */
+  --color-red-700: #F1CD8C;   /* CTA — теперь песочный (красный убран) */
+  --color-red-800: #E5BD78;   /* hover для CTA */
+  --color-ink-900: #1A1F1A;   /* почти чёрный с оливковым подтоном */
+  --color-grey-500: #8A8F85;  /* серый с оливковым подтоном */
+  --color-grey-300: #C9CDC2;
 
   --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

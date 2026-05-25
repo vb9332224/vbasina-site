@@ -51,7 +51,7 @@ export function Speaking() {
                     </div>
                   </div>
                   {t.live && (
-                    <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-red-700 text-white text-[10px] uppercase tracking-[0.14em] px-2.5 py-1">
+                    <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-[#A8302A] text-white text-[10px] uppercase tracking-[0.14em] px-2.5 py-1">
                       <span className="w-1.5 h-1.5 bg-white rounded-full" />
                       Live
                     </span>

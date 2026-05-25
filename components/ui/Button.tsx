@@ -5,7 +5,7 @@ type Variant = "primary" | "secondary" | "ghost-gold";
 
 const styles: Record<Variant, string> = {
   primary:
-    "bg-red-700 hover:bg-red-800 text-white border border-gold-500/60 px-6 py-3.5 text-sm md:text-base font-medium tracking-wide transition-colors",
+    "bg-red-700 hover:bg-red-800 text-navy-900 px-6 py-3.5 text-sm md:text-base font-semibold tracking-wide transition-colors",
   secondary:
     "bg-transparent text-gold-500 hover:text-gold-300 border border-gold-500 hover:border-gold-300 px-6 py-3.5 text-sm md:text-base font-medium tracking-wide transition-colors",
   "ghost-gold":

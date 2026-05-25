@@ -32,7 +32,7 @@ export function Header() {
 
         <Link
           href={ctaPrimaryHref}
-          className="hidden md:inline-flex items-center bg-red-700 hover:bg-red-800 text-white text-sm font-medium px-4 py-2.5 border border-gold-500/60 transition-colors"
+          className="hidden md:inline-flex items-center bg-red-700 hover:bg-red-800 text-navy-900 text-sm font-medium px-4 py-2.5 font-semibold transition-colors"
         >
           {ctaPrimaryLabel}
         </Link>
@@ -73,7 +73,7 @@ export function Header() {
             ))}
             <Link
               href={ctaPrimaryHref}
-              className="mt-2 inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-white text-sm font-medium px-4 py-3 border border-gold-500/60 transition-colors"
+              className="mt-2 inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-navy-900 text-sm font-medium px-4 py-3 font-semibold transition-colors"
               onClick={() => setOpen(false)}
             >
               {ctaPrimaryLabel}
@@ -84,7 +84,7 @@ export function Header() {
 
       <a
         href={ctaPrimaryHref}
-        className="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-red-700 hover:bg-red-800 text-white text-center text-sm font-medium py-3.5 border border-gold-500/60 shadow-lg"
+        className="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-red-700 hover:bg-red-800 text-navy-900 text-center text-sm font-medium py-3.5 font-semibold shadow-lg"
       >
         Записаться на сессию →
       </a>

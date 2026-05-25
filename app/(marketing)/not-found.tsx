@@ -16,7 +16,7 @@ export default function NotFound() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
           <Link
             href="/"
-            className="inline-flex items-center bg-red-700 hover:bg-red-800 text-white px-6 py-3.5 border border-gold-500/60 transition-colors"
+            className="inline-flex items-center bg-red-700 hover:bg-red-800 text-navy-900 font-semibold px-6 py-3.5 transition-colors"
           >
             На главную →
           </Link>
