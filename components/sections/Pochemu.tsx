@@ -3,9 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const figures = [
   { value: "150+", label: "реализованных проектов в шести индустриях" },
-  { value: "17 лет", label: "на стыке регулятора и рынка" },
-  { value: "2,1 млрд ₽", label: "проектного финансирования от Банка ДОМ.РФ (Омакульма)" },
-  { value: "198", label: "домовладений в первом ИЖС-комплексе РФ" },
+  { value: "17 лет", label: "в девелопменте" },
 ];
 
 const regalia = [
@@ -32,14 +30,14 @@ export function Pochemu() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 md:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 border-t border-navy-900/10 pt-12">
+        <div className="mt-14 md:mt-20 grid sm:grid-cols-2 gap-x-10 gap-y-12 border-t border-navy-900/10 pt-12">
           {figures.map((f, i) => (
             <Reveal key={f.value} delay={i * 0.05}>
               <div>
-                <div className="font-serif text-5xl md:text-6xl lg:text-[88px] leading-none text-navy-900 tracking-tight">
+                <div className="font-serif text-6xl md:text-7xl lg:text-[112px] leading-none text-navy-900 tracking-tight">
                   {f.value}
                 </div>
-                <p className="mt-4 text-sm text-grey-500 leading-snug max-w-[220px]">{f.label}</p>
+                <p className="mt-5 text-base md:text-lg text-grey-500 leading-snug max-w-md">{f.label}</p>
               </div>
             </Reveal>
           ))}

@@ -34,8 +34,8 @@ async function sendTelegram(body: LeadPayload, req: NextRequest): Promise<void> 
     `<b>🌿 Новая заявка с vbasina.com</b>`,
     ``,
     `<b>Имя:</b> ${escapeHtml(body.name ?? "—")}`,
-    `<b>Email:</b> ${escapeHtml(body.email ?? "—")}`,
   ];
+  if (body.email) lines.push(`<b>Email:</b> ${escapeHtml(body.email)}`);
   if (body.contact) lines.push(`<b>Контакт:</b> ${escapeHtml(body.contact)}`);
   if (body.product) lines.push(`<b>Продукт:</b> ${escapeHtml(body.product)}`);
   if (body.message) {
@@ -84,9 +84,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   }
 
-  if (!body.name || !body.email || !body.consent) {
+  // Обязательно: имя + хотя бы один контакт (email или contact) + согласие
+  if (!body.name || (!body.email && !body.contact) || !body.consent) {
     return NextResponse.json(
-      { ok: false, error: "Заполните имя, email и согласие на обработку ПДн." },
+      {
+        ok: false,
+        error: "Заполните имя, email или другой контакт и согласие на обработку ПДн.",
+      },
       { status: 422 },
     );
   }
