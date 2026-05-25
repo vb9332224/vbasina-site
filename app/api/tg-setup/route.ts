@@ -22,7 +22,10 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "no TELEGRAM_BOT_TOKEN" }, { status: 500 });
   }
 
-  const webhookUrl = `${url.origin}/api/tg-webhook`;
+  // Telegram иногда не резолвит .com-зоны на REG.RU — fallback на vercel-домен через ?host=
+  const customHost = url.searchParams.get("host");
+  const host = customHost ?? url.host;
+  const webhookUrl = `https://${host}/api/tg-webhook`;
   const secret = process.env.TELEGRAM_WEBHOOK_SECRET;
 
   const payload: Record<string, unknown> = {
