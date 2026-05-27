@@ -1,16 +1,21 @@
 import { Locale } from "@/lib/i18n/types";
 
+export type PartnerTier = "core" | "stakeholder";
+
 export type Partner = {
   slug: string;
+  tier: PartnerTier;
   name: { ru: string; en: string };
   /** Короткие роли через ·  */
   roles: { ru: string[]; en: string[] };
-  /** Главное достижение — для большой плашки */
-  headline: { ru: string; en: string };
-  /** Развёрнутое био — 3-4 предложения */
-  bio: { ru: string; en: string };
-  /** Маркированный список ключевых достижений */
-  highlights: { ru: string[]; en: string[] };
+  /** Главное достижение — для большой плашки (только core) */
+  headline?: { ru: string; en: string };
+  /** Развёрнутое био — 3-4 предложения (только core) */
+  bio?: { ru: string; en: string };
+  /** Маркированный список ключевых достижений (только core) */
+  highlights?: { ru: string[]; en: string[] };
+  /** Краткое описание для stakeholder-карточки — 1-2 строки */
+  short?: { ru: string; en: string };
   /** Книги, проекты, ссылки */
   works?: { label: string; href?: string }[];
   /** Путь к фото в /public/images/partners/ — если есть */
@@ -22,6 +27,7 @@ export type Partner = {
 export const partners: Partner[] = [
   {
     slug: "gergel",
+    tier: "core",
     name: {
       ru: "Яна Гергель",
       en: "Yana Gergel",
@@ -83,6 +89,7 @@ export const partners: Partner[] = [
   },
   {
     slug: "marinovich",
+    tier: "core",
     name: {
       ru: "Владимир Маринович",
       en: "Vladimir Marinovich",
@@ -137,6 +144,7 @@ export const partners: Partner[] = [
   },
   {
     slug: "mayer",
+    tier: "core",
     name: {
       ru: "Мария Майер",
       en: "Maria Mayer",
@@ -182,8 +190,85 @@ export const partners: Partner[] = [
     photo: "/images/partners/maria-mayer.jpg",
     initials: "ММ",
   },
+
+  // ─────────────── СТЕЙКХОЛДЕРЫ ───────────────
+  // Партнёры, о которых пока не выводим развёрнутое био.
+  // Имена/фото заполнить по мере подтверждения от Виолетты.
+  {
+    slug: "stakeholder-1",
+    tier: "stakeholder",
+    name: { ru: "Партнёр 1", en: "Partner 1" },
+    roles: {
+      ru: ["Финансовый партнёр"],
+      en: ["Finance partner"],
+    },
+    short: {
+      ru: "Структурирование сделок, проектное финансирование, работа с банками первого эшелона.",
+      en: "Deal structuring, project finance, top-tier banking relationships.",
+    },
+    initials: "—",
+  },
+  {
+    slug: "stakeholder-2",
+    tier: "stakeholder",
+    name: { ru: "Партнёр 2", en: "Partner 2" },
+    roles: {
+      ru: ["Юридический партнёр"],
+      en: ["Legal partner"],
+    },
+    short: {
+      ru: "Корпоративное право, M&A, налоговое структурирование под международные сделки.",
+      en: "Corporate law, M&A, tax structuring for cross-border deals.",
+    },
+    initials: "—",
+  },
+  {
+    slug: "stakeholder-3",
+    tier: "stakeholder",
+    name: { ru: "Партнёр 3", en: "Partner 3" },
+    roles: {
+      ru: ["Партнёр по маркетингу и продажам"],
+      en: ["Marketing & sales partner"],
+    },
+    short: {
+      ru: "Создание отделов продаж под ключ, performance-маркетинг, лидогенерация для девелопмента.",
+      en: "Building sales departments from scratch, performance marketing, lead generation for developers.",
+    },
+    initials: "—",
+  },
+  {
+    slug: "stakeholder-4",
+    tier: "stakeholder",
+    name: { ru: "Партнёр 4", en: "Partner 4" },
+    roles: {
+      ru: ["Партнёр по архитектуре и дизайну"],
+      en: ["Architecture & design partner"],
+    },
+    short: {
+      ru: "Архитектурное проектирование жилых и общественных пространств, дизайн-код, ландшафт.",
+      en: "Architectural design for residential and public spaces, design code, landscape.",
+    },
+    initials: "—",
+  },
+  {
+    slug: "stakeholder-5",
+    tier: "stakeholder",
+    name: { ru: "Партнёр 5", en: "Partner 5" },
+    roles: {
+      ru: ["Партнёр по строительству"],
+      en: ["Construction partner"],
+    },
+    short: {
+      ru: "Технический заказчик, генподряд, строительный контроль, индустриальное домостроение.",
+      en: "Technical client, general contracting, construction supervision, industrial housebuilding.",
+    },
+    initials: "—",
+  },
 ];
 
 export function partnerName(p: Partner, locale: Locale): string {
   return p.name[locale];
 }
+
+export const corePartners = partners.filter((p) => p.tier === "core");
+export const stakeholders = partners.filter((p) => p.tier === "stakeholder");

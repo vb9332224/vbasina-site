@@ -98,6 +98,8 @@ export default function AboutPage() {
         </ul>
       </PageHero>
 
+      <Partners locale="ru" />
+
       <section className="bg-cream-100">
         <div className="container-x py-16 md:py-20">
           <Reveal>
@@ -153,8 +155,6 @@ export default function AboutPage() {
       </section>
 
       <Assets />
-
-      <Partners locale="ru" />
 
       <section id="regalia" className="bg-navy-900 text-cream-100 scroll-mt-24">
         <div className="container-x py-20 md:py-28">
