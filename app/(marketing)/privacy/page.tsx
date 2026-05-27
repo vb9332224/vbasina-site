@@ -4,7 +4,7 @@ import { site } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Политика конфиденциальности",
-  description: "Политика обработки персональных данных Basina & Partners.",
+  description: "Политика обработки персональных данных BGM Consulting.",
   robots: { index: false, follow: true },
 };
 

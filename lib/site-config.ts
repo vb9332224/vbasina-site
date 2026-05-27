@@ -1,5 +1,5 @@
 export const site = {
-  name: "Basina & Partners",
+  name: "BGM Consulting",
   legalName: "ООО «Басина и партнёры»",
   legalReg: "85.110.1476680",
   country: "Республика Армения",
@@ -12,8 +12,8 @@ export const site = {
   founder: {
     name: "Виолетта Басина",
     fullName: "Виолетта Аркадьевна Басина",
-    titleRu: "Основатель Basina & Partners",
-    titleEn: "Founder of Basina & Partners",
+    titleRu: "Основатель BGM Consulting",
+    titleEn: "Founder of BGM Consulting",
   },
 } as const;
 

@@ -32,7 +32,7 @@ export function Footer({ locale = "ru" }: { locale?: Locale }) {
       <div className="container-x py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <div className="font-serif text-xl text-gold-500 mb-4">
-            Basina <span className="text-cream-100/70">&</span> Partners
+            BGM <span className="text-cream-100/70">·</span> Consulting
           </div>
           <p className="text-sm leading-relaxed text-cream-100/70">
             {site.legalName}

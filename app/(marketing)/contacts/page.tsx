@@ -5,7 +5,7 @@ import { LeadForm } from "@/components/sections/LeadForm";
 import { site } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Контакты — Basina & Partners",
+  title: "Контакты — BGM Consulting",
   description:
     "Email, Telegram, Instagram. Офис в Ереване. ООО «Басина и партнёры», рег. 85.110.1476680.",
 };

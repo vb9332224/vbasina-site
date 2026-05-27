@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { casesFull } from "@/lib/cases-full";
 
 export const metadata: Metadata = {
-  title: "Кейсы — Basina & Partners",
+  title: "Кейсы — BGM Consulting",
   description:
     "Реальные проекты с подтверждённым результатом: первое в России проектное финансирование ИЖС, антирейдерская модель, реформа защиты дольщиков.",
 };
@@ -23,7 +23,7 @@ export default function CasesPage() {
             <span className="text-gold-500">с подтверждённым результатом</span>
           </>
         }
-        subtitle="Четыре кейса, на которых стоит вся практика Basina & Partners. Все цифры — публичные и проверяемые."
+        subtitle="Четыре кейса, на которых стоит вся практика BGM Consulting. Все цифры — публичные и проверяемые."
       />
 
       <section className="bg-cream-50">

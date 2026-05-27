@@ -62,7 +62,7 @@ export function Hero({ locale = "ru" }: { locale?: Locale }) {
           <div className="relative aspect-[3/4] max-w-[420px] mx-auto lg:ml-auto lg:mr-0 border border-gold-500/30 bg-navy-800/40 overflow-hidden">
             <Image
               src="/images/portraits/violetta-green.jpg"
-              alt="Виолетта Басина — основатель Basina & Partners"
+              alt="Виолетта Басина — основатель BGM Consulting"
               fill
               priority
               sizes="(min-width: 1024px) 420px, (min-width: 768px) 50vw, 100vw"

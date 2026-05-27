@@ -32,7 +32,7 @@ export function Header({ locale = "ru" }: { locale?: Locale }) {
           className="font-serif text-xl md:text-2xl text-gold-500 hover:text-gold-300 transition-colors tracking-tight"
           onClick={() => setOpen(false)}
         >
-          Basina <span className="text-cream-100/70">&</span> Partners
+          BGM <span className="text-cream-100/70">·</span> Consulting
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7 text-sm">

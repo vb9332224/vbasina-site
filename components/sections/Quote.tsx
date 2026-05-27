@@ -12,7 +12,7 @@ export function Quote({ locale = "ru" }: { locale?: Locale }) {
           <div className="relative aspect-[3/4] max-w-[460px] mx-auto lg:mx-0 border border-gold-500/30 bg-navy-800/40 overflow-hidden">
             <Image
               src="/images/portraits/violetta-quote.jpg"
-              alt="Виолетта Басина, основатель Basina & Partners"
+              alt="Виолетта Басина, основатель BGM Consulting"
               fill
               sizes="(min-width: 1024px) 460px, (min-width: 768px) 50vw, 100vw"
               className="object-cover"

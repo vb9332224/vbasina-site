@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { services } from "@/lib/services-full";
 
 export const metadata: Metadata = {
-  title: "Услуги — Basina & Partners",
+  title: "Услуги — BGM Consulting",
   description:
     "Восемь форматов работы: землепродюсирование, стратегическая сессия, полный цикл, антикризис, корпоративные сессии, менторство, обучение агентов, авторский курс.",
 };
@@ -18,7 +18,7 @@ export default function ServicesPage() {
         title={
           <>
             Восемь форматов работы<br />
-            <span className="text-gold-500">с Basina & Partners</span>
+            <span className="text-gold-500">с BGM Consulting</span>
           </>
         }
         subtitle="От 90-минутной стратегической сессии до 6-месячного полного цикла запуска продукта. Выберите формат под свою задачу — или попросите рекомендацию."

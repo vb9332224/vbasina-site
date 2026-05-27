@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
+import { Founders } from "@/components/sections/Founders";
+import { VyhodiIzZemli } from "@/components/sections/VyhodiIzZemli";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Manifesto } from "@/components/sections/Manifesto";
 import { Zachem } from "@/components/sections/Zachem";
@@ -12,7 +14,7 @@ import { MediaSection } from "@/components/sections/Media";
 import { CtaBlock } from "@/components/sections/CtaBlock";
 
 export const metadata: Metadata = {
-  title: "Basina & Partners — strategic consulting",
+  title: "BGM Consulting — strategic consulting",
   description:
     "We make star projects. Land producers. 17 years in real estate. Russia, Armenia, Kyrgyzstan, Azerbaijan, Tajikistan.",
   alternates: {
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     locale: "en_US",
-    title: "Basina & Partners — strategic consulting",
+    title: "BGM Consulting — strategic consulting",
     description: "Land producers. 17 years in real estate. We make star projects.",
   },
 };
@@ -34,6 +36,8 @@ export default function HomePageEn() {
   return (
     <>
       <Hero locale="en" />
+      <Founders locale="en" />
+      <VyhodiIzZemli locale="en" />
       <TrustBar locale="en" />
       <Manifesto locale="en" />
       <Zachem locale="en" />

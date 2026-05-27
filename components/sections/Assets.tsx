@@ -12,7 +12,7 @@ export function Assets() {
           </h2>
           <p className="mt-6 text-grey-500 leading-relaxed max-w-2xl">
             Часть активов проданы, часть закрыты — но каждый дал ключевой опыт, который сегодня
-            работает на клиентов Basina&nbsp;&amp;&nbsp;Partners. Ниже — основные.
+            работает на клиентов BGM Consulting. Ниже — основные.
           </p>
         </Reveal>
 

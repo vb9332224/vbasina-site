@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Coming soon — Basina & Partners",
+  title: "Coming soon — BGM Consulting",
   description: "This section is being translated. The full Russian version is available now.",
   robots: { index: false, follow: true },
 };

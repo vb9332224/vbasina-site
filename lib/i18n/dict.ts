@@ -23,8 +23,8 @@ export const dict = {
   // === HERO ===
   hero: {
     eyebrow: {
-      ru: "Basina & Partners · стратегический консалтинг",
-      en: "Basina & Partners · strategic consulting",
+      ru: "BGM Consulting · стратегический консалтинг",
+      en: "BGM Consulting · strategic consulting",
     },
     title1: { ru: "Делаем", en: "We make" },
     title2: { ru: "проекты-звёзды", en: "star projects" },
@@ -51,7 +51,7 @@ export const dict = {
 
   // === MANIFESTO ===
   manifesto: {
-    eyebrow: { ru: "— Кто такие Basina & Partners", en: "— Who is Basina & Partners" },
+    eyebrow: { ru: "— Кто такие BGM Consulting", en: "— Who is BGM Consulting" },
     title1: { ru: "Мы — продюсерская компания.", en: "We are a producing company." },
     title2: { ru: "Землепродюсеры.", en: "Land producers." },
     title3: { ru: "Development producers.", en: "Development producers." },
@@ -223,7 +223,7 @@ export const dict = {
   kak: {
     eyebrow: { ru: "— Как мы работаем", en: "— How we work" },
     title1: { ru: "Восемь форматов работы", en: "Eight engagement formats" },
-    title2: { ru: "с Basina & Partners", en: "with Basina & Partners" },
+    title2: { ru: "с BGM Consulting", en: "with BGM Consulting" },
     learnMore: { ru: "Узнать больше →", en: "Learn more →" },
   },
 
@@ -245,8 +245,8 @@ export const dict = {
       en: "I don't fight the system. I create the new where there isn't any yet — and I find a way around when the old one doesn't work. I've been doing this for 17 years across different industries. And I'll keep doing it.",
     },
     sig: {
-      ru: "— Виолетта Басина, основатель Basina & Partners",
-      en: "— Violetta Basina, Founder of Basina & Partners",
+      ru: "— Виолетта Басина, основатель BGM Consulting",
+      en: "— Violetta Basina, Founder of BGM Consulting",
     },
     micro: {
       ru: "Действительный член МАИН · Кавалер знака «Строительная Слава» · Лауреат Dubai Award 2023",

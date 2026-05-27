@@ -1,4 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
+import { Founders } from "@/components/sections/Founders";
+import { VyhodiIzZemli } from "@/components/sections/VyhodiIzZemli";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Manifesto } from "@/components/sections/Manifesto";
 import { Zachem } from "@/components/sections/Zachem";
@@ -14,6 +16,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Founders locale="ru" />
+      <VyhodiIzZemli locale="ru" />
       <TrustBar />
       <Manifesto />
       <Zachem />

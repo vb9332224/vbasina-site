@@ -4,7 +4,7 @@ import { site } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Оферта",
-  description: "Публичная оферта на консультационные услуги Basina & Partners.",
+  description: "Публичная оферта на консультационные услуги BGM Consulting.",
   robots: { index: false, follow: true },
 };
 

@@ -52,9 +52,9 @@ export const partners: Partner[] = [
     },
     bio: {
       ru:
-        "В Basina & Partners — стратегический партнёр и соавтор метода Басиной и Гергель (8 слоёв создания девелоперского проекта). Отвечает за градостроительный и архитектурный контур флагманской услуги «Землепродюсирование»: мастерпланирование, ППТ, средовые сценарии. Опыт работы с крупнейшими российскими девелоперами и федеральными программами развития городов.",
+        "В BGM Consulting — стратегический партнёр и соавтор метода Басиной и Гергель (8 слоёв создания девелоперского проекта). Отвечает за градостроительный и архитектурный контур флагманской услуги «Землепродюсирование»: мастерпланирование, ППТ, средовые сценарии. Опыт работы с крупнейшими российскими девелоперами и федеральными программами развития городов.",
       en:
-        "Strategic partner at Basina & Partners and co-author of the Basina & Gergel Method (8 layers of developing a project). Owns the urban-planning and architectural layer of our flagship Land Producing service: master plans, territory plans, public-realm scenarios. Track record with Russia’s largest developers and federal city-development programmes.",
+        "Strategic partner at BGM Consulting and co-author of the Basina & Gergel Method (8 layers of developing a project). Owns the urban-planning and architectural layer of our flagship Land Producing service: master plans, territory plans, public-realm scenarios. Track record with Russia’s largest developers and federal city-development programmes.",
     },
     highlights: {
       ru: [
@@ -112,9 +112,9 @@ export const partners: Partner[] = [
     },
     bio: {
       ru:
-        "В Basina & Partners — стратегический партнёр Виолетты Басиной. Эксперт по масштабированию бизнеса, командной динамике и трансформации компаний в кризис. Соединяет в работе глубокую финансовую экспертизу, философию предпринимательства и инженерный подход к построению команд.",
+        "В BGM Consulting — стратегический партнёр Виолетты Басиной. Эксперт по масштабированию бизнеса, командной динамике и трансформации компаний в кризис. Соединяет в работе глубокую финансовую экспертизу, философию предпринимательства и инженерный подход к построению команд.",
       en:
-        "Strategic partner at Basina & Partners. Expert in business scaling, team dynamics, and corporate transformation through crisis. Combines deep financial expertise, entrepreneurial philosophy, and an engineering approach to building teams.",
+        "Strategic partner at BGM Consulting. Expert in business scaling, team dynamics, and corporate transformation through crisis. Combines deep financial expertise, entrepreneurial philosophy, and an engineering approach to building teams.",
     },
     highlights: {
       ru: [
@@ -169,9 +169,9 @@ export const partners: Partner[] = [
     },
     bio: {
       ru:
-        "В Basina & Partners — стратегический партнёр, отвечающий за смысловой слой землепродюсерских проектов. Превращает землю в место с характером, традициями и сообществом — нематериальные активы, которые на горизонте 5–10 лет дают премию к цене метра и сокращают расходы на маркетинг новых очередей. Параллельно обучает команды клиентов работе с «инвестициями со смыслом» — методологии, в которой ESG, идентичность и P&L согласованы по дизайну, а не пришиты сверху.",
+        "В BGM Consulting — стратегический партнёр, отвечающий за смысловой слой землепродюсерских проектов. Превращает землю в место с характером, традициями и сообществом — нематериальные активы, которые на горизонте 5–10 лет дают премию к цене метра и сокращают расходы на маркетинг новых очередей. Параллельно обучает команды клиентов работе с «инвестициями со смыслом» — методологии, в которой ESG, идентичность и P&L согласованы по дизайну, а не пришиты сверху.",
       en:
-        "Strategic partner at Basina & Partners, responsible for the meaning layer of our land-producing projects. Turns land into a place with character, traditions, and community — the intangible assets that, over a 5–10 year horizon, deliver a price-per-metre premium and cut marketing costs on new phases. In parallel, she trains client teams in «investing with meaning» — a methodology where ESG, identity, and P&L are aligned by design rather than bolted on.",
+        "Strategic partner at BGM Consulting, responsible for the meaning layer of our land-producing projects. Turns land into a place with character, traditions, and community — the intangible assets that, over a 5–10 year horizon, deliver a price-per-metre premium and cut marketing costs on new phases. In parallel, she trains client teams in «investing with meaning» — a methodology where ESG, identity, and P&L are aligned by design rather than bolted on.",
     },
     highlights: {
       ru: [

@@ -57,7 +57,7 @@ async function showServicesMenu(chatId: number) {
   ]);
 
   const text =
-    "<b>Добрый день! Это бот Basina &amp; Partners.</b>\n\n" +
+    "<b>Добрый день! Это бот BGM Consulting.</b>\n\n" +
     "Расскажите, что вас интересует — выберите формат, и наша команда " +
     "свяжется с вами в течение рабочего дня.";
 
