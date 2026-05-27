@@ -135,6 +135,53 @@ export const partners: Partner[] = [
     photo: "/images/partners/vmarinovich.jpg",
     initials: "ВМ",
   },
+  {
+    slug: "mayer",
+    name: {
+      ru: "Мария Майер",
+      en: "Maria Mayer",
+    },
+    roles: {
+      ru: [
+        "Эксперт по идентичности территории",
+        "Эксперт доходной недвижимости",
+        "Тренер команд по «инвестициям со смыслом»",
+      ],
+      en: [
+        "Place-identity expert",
+        "Income real-estate expert",
+        "Trainer in «investing with meaning»",
+      ],
+    },
+    headline: {
+      ru:
+        "Создаёт идентичность территории — то, ради чего сюда возвращаются и за что платят премию к рыночной цене метра.",
+      en:
+        "Builds the identity of a territory — what makes people come back, and why they pay a premium per square metre.",
+    },
+    bio: {
+      ru:
+        "В Basina & Partners — стратегический партнёр, отвечающий за смысловой слой землепродюсерских проектов. Превращает землю в место с характером, традициями и сообществом — нематериальные активы, которые на горизонте 5–10 лет дают премию к цене метра и сокращают расходы на маркетинг новых очередей. Параллельно обучает команды клиентов работе с «инвестициями со смыслом» — методологии, в которой ESG, идентичность и P&L согласованы по дизайну, а не пришиты сверху.",
+      en:
+        "Strategic partner at Basina & Partners, responsible for the meaning layer of our land-producing projects. Turns land into a place with character, traditions, and community — the intangible assets that, over a 5–10 year horizon, deliver a price-per-metre premium and cut marketing costs on new phases. In parallel, she trains client teams in «investing with meaning» — a methodology where ESG, identity, and P&L are aligned by design rather than bolted on.",
+    },
+    highlights: {
+      ru: [
+        "25+ лет управления командами — формирование «команд-организмов» с высоким доверием и общими ценностями.",
+        "Эксперт доходной недвижимости: модели монетизации территории через идентичность, традиции и резидентское сообщество.",
+        "Тренер команд по «инвестициям со смыслом» — корпоративные программы для девелоперов и инвесторов.",
+        "Специализация: работа с нематериальным наследием места — традициями, локальной культурой, генетикой ландшафта.",
+      ],
+      en: [
+        "25+ years of team leadership — building «team-organisms» with high trust and shared values.",
+        "Income real-estate expert: models of territory monetisation through identity, traditions, and resident community.",
+        "Trains teams in «investing with meaning» — corporate programmes for developers and investors.",
+        "Specialisation: working with the intangible heritage of a place — traditions, local culture, the genetics of landscape.",
+      ],
+    },
+    photo: "/images/partners/maria-mayer.jpg",
+    initials: "ММ",
+  },
 ];
 
 export function partnerName(p: Partner, locale: Locale): string {
