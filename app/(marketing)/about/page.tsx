@@ -4,6 +4,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Assets } from "@/components/sections/Assets";
+import { Partners } from "@/components/sections/Partners";
 import { awardsByCategory } from "@/lib/awards";
 import { site } from "@/lib/site-config";
 
@@ -152,6 +153,8 @@ export default function AboutPage() {
       </section>
 
       <Assets />
+
+      <Partners locale="ru" />
 
       <section id="regalia" className="bg-navy-900 text-cream-100 scroll-mt-24">
         <div className="container-x py-20 md:py-28">
