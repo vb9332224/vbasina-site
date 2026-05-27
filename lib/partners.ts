@@ -21,6 +21,67 @@ export type Partner = {
 
 export const partners: Partner[] = [
   {
+    slug: "gergel",
+    name: {
+      ru: "Яна Гергель",
+      en: "Yana Gergel",
+    },
+    roles: {
+      ru: [
+        "Первый продюсер городов и территорий в России",
+        "Архитектор-градостроитель, 15+ лет",
+        "Соавтор метода Басиной и Гергель",
+      ],
+      en: [
+        "Russia’s first producer of cities and territories",
+        "Architect-urbanist, 15+ years",
+        "Co-author of the Basina & Gergel Method",
+      ],
+    },
+    headline: {
+      ru:
+        "Градостроитель с портфелем проектов общей площадью около 2,5 млрд м². От ППТ к ЧМ-2018 до реновации Москвы.",
+      en:
+        "Urbanist with a portfolio of around 2.5 billion m² of project area — from FIFA 2018 territory plans to Moscow renovation.",
+    },
+    bio: {
+      ru:
+        "В Basina & Partners — стратегический партнёр и соавтор метода Басиной и Гергель (8 слоёв создания девелоперского проекта). Отвечает за градостроительный и архитектурный контур флагманской услуги «Землепродюсирование»: мастерпланирование, ППТ, средовые сценарии. Опыт работы с крупнейшими российскими девелоперами и федеральными программами развития городов.",
+      en:
+        "Strategic partner at Basina & Partners and co-author of the Basina & Gergel Method (8 layers of developing a project). Owns the urban-planning and architectural layer of our flagship Land Producing service: master plans, territory plans, public-realm scenarios. Track record with Russia’s largest developers and federal city-development programmes.",
+    },
+    highlights: {
+      ru: [
+        "Основатель группы компаний в сфере девелопмента и креативной индустрии.",
+        "Преподаватель РАНХиГС — кафедра территориального развития им. В.Л. Глазычева.",
+        "Программный руководитель трека «Развитие малых городов» Всероссийского молодёжного форума «Амур» (2023).",
+        "Приглашённый эксперт Всероссийского модульного проекта «Сельское подворье 2023–2063».",
+        "ППТ к Чемпионату мира по футболу 2018 — Волгоград, Калининград.",
+        "≈15 транспортно-пересадочных узлов в Москве и Московской области.",
+        "Стратегия социально-экономического и пространственного развития муниципия Кишинэу.",
+        "ППМТ для крупнейших застройщиков: Самолёт, ПИК, Главстрой, МИЦ, Лидер, ИНГРАД — проекты Береговой, Баланс, Западная Долина, Нагорный, Люблино и др.",
+        "Программа реновации жилого фонда Москвы — Царицыно, Проспект Вернадского, Гольяново.",
+        "Развитие малых городов Хабаровского края.",
+        "Средовые проекты (парки, бульвары, скверы, площади) программы «Среда 800», Нижний Новгород.",
+      ],
+      en: [
+        "Founder of a group of companies in development and the creative industries.",
+        "Lecturer at RANEPA — Department of Territorial Development named after V.L. Glazychev.",
+        "Programme lead of the «Small Cities Development» track at the All-Russian Youth Forum «Amur» (2023).",
+        "Invited expert of the federal «Rural Estate 2023–2063» modular project.",
+        "Territory plans for the FIFA 2018 World Cup — Volgograd and Kaliningrad.",
+        "≈15 transport interchange hubs across Moscow and the Moscow region.",
+        "Strategy of socio-economic and spatial development of Chișinău municipality.",
+        "Detailed territory plans for Russia’s largest developers: Samolet, PIK, Glavstroy, MIC, Lider, INGRAD — Beregovoy, Balance, Western Valley, Nagorny, Lyublino and others.",
+        "Moscow housing renovation programme — Tsaritsyno, Prospekt Vernadskogo, Golyanovo.",
+        "Small-city development across the Khabarovsk region.",
+        "Public-realm projects (parks, boulevards, squares) under the «Sreda 800» programme, Nizhny Novgorod.",
+      ],
+    },
+    photo: "/images/partners/yana-gergel.jpg",
+    initials: "ЯГ",
+  },
+  {
     slug: "marinovich",
     name: {
       ru: "Владимир Маринович",
