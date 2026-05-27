@@ -60,16 +60,27 @@ const IconLaunch = () => (
 );
 
 export function DlyaKogo({ locale = "ru" }: { locale?: Locale }) {
-  const cards = [
-    { title: t(locale, (d) => d.dlyakogo.s1Title), body: t(locale, (d) => d.dlyakogo.s1Body), href: localePath(locale, "/services#land"), Icon: IconLand },
-    { title: t(locale, (d) => d.dlyakogo.s2Title), body: t(locale, (d) => d.dlyakogo.s2Body), href: localePath(locale, "/services#full-cycle"), Icon: IconBuilding },
-    { title: t(locale, (d) => d.dlyakogo.s3Title), body: t(locale, (d) => d.dlyakogo.s3Body), href: localePath(locale, "/services#corporate"), Icon: IconBank },
-    { title: t(locale, (d) => d.dlyakogo.s4Title), body: t(locale, (d) => d.dlyakogo.s4Body), href: localePath(locale, "/services#land"), Icon: IconShield },
-    { title: t(locale, (d) => d.dlyakogo.s5Title), body: t(locale, (d) => d.dlyakogo.s5Body), href: localePath(locale, "/services#agents-training"), Icon: IconAgency },
+  const allCards = [
+    // 1. Предприниматель
+    { title: t(locale, (d) => d.dlyakogo.s1Title), body: t(locale, (d) => d.dlyakogo.s1Body), href: localePath(locale, "/services#mentoring"), Icon: IconAgency },
+    // 2. Бизнес
+    { title: t(locale, (d) => d.dlyakogo.s2Title), body: t(locale, (d) => d.dlyakogo.s2Body), href: localePath(locale, "/services#strategy"), Icon: IconBuilding },
+    // 3. Земля и девелопмент (flagship)
+    { title: t(locale, (d) => d.dlyakogo.s3Title), body: t(locale, (d) => d.dlyakogo.s3Body), href: localePath(locale, "/services#land"), Icon: IconLand },
+    // 4. Капитал и масштабирование
+    { title: t(locale, (d) => d.dlyakogo.s4Title), body: t(locale, (d) => d.dlyakogo.s4Body), href: localePath(locale, "/services#full-cycle"), Icon: IconBank },
+    // 5. Публичность и влияние
+    { title: t(locale, (d) => d.dlyakogo.s5Title), body: t(locale, (d) => d.dlyakogo.s5Body), href: localePath(locale, "/services#corporate"), Icon: IconLaunch },
+    // 6. Производство и агро
     { title: t(locale, (d) => d.dlyakogo.s6Title), body: t(locale, (d) => d.dlyakogo.s6Body), href: localePath(locale, "/services#full-cycle"), Icon: IconMarketing },
-    { title: t(locale, (d) => d.dlyakogo.s7Title), body: t(locale, (d) => d.dlyakogo.s7Body), href: localePath(locale, "/services#recovery"), Icon: IconRecovery },
-    { title: t(locale, (d) => d.dlyakogo.s8Title), body: t(locale, (d) => d.dlyakogo.s8Body), href: localePath(locale, "/services#mentoring"), Icon: IconLaunch },
+    // 7. Антикризисная пересборка
+    { title: t(locale, (d) => d.dlyakogo.s7Title), body: t(locale, (d) => d.dlyakogo.s7Body), href: localePath(locale, "/services#recovery"), Icon: IconShield },
+    // 8. (placeholder, отключён)
+    { title: t(locale, (d) => d.dlyakogo.s8Title), body: t(locale, (d) => d.dlyakogo.s8Body), href: localePath(locale, "/services#mentoring"), Icon: IconRecovery },
   ];
+
+  // Показываем только заполненные сегменты (s8 сейчас пуст)
+  const cards = allCards.filter((c) => c.title && c.title.trim().length > 0);
 
   const learnMore = locale === "ru" ? "Узнать больше →" : "Learn more →";
 

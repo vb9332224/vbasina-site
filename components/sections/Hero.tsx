@@ -22,14 +22,14 @@ export function Hero({ locale = "ru" }: { locale?: Locale }) {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h1 className="font-serif text-[36px] leading-[1.05] sm:text-[44px] md:text-5xl lg:text-[56px] text-cream-100 tracking-tight">
+            <h1 className="font-serif text-[34px] leading-[1.05] sm:text-[42px] md:text-5xl lg:text-[60px] text-cream-100 tracking-tight">
               {t(locale, (d) => d.hero.title1)}{" "}
               <span className="text-gold-500">{t(locale, (d) => d.hero.title2)}</span>.
             </h1>
           </Reveal>
 
           <Reveal delay={0.12}>
-            <p className="mt-6 font-serif text-xl md:text-2xl text-cream-100 leading-snug max-w-2xl">
+            <p className="mt-6 font-serif italic text-xl md:text-2xl text-gold-300 leading-snug max-w-2xl">
               {t(locale, (d) => d.hero.sub)}
             </p>
           </Reveal>
