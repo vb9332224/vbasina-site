@@ -23,24 +23,24 @@ export const dict = {
   // === HERO ===
   hero: {
     eyebrow: {
-      ru: "BGM Consulting · продюсирование предпринимателей и территорий",
-      en: "BGM Consulting · producing entrepreneurs and territories",
+      ru: "BGM Consulting · продюсирование земли и территорий",
+      en: "BGM Consulting · land and territory producing",
     },
-    title1: { ru: "Продюсируем предпринимателей, бизнесы и", en: "We produce entrepreneurs, businesses, and" },
-    title2: { ru: "территории", en: "territories" },
+    title1: { ru: "Продюсируем землю и территории. Строим", en: "We produce land and territory. We build" },
+    title2: { ru: "проекты-звёзды", en: "star projects" },
     sub: {
-      ru: "Не консалтинг. Пересборка системы вокруг предпринимателя.",
-      en: "Not consulting. We rebuild the system around the entrepreneur.",
+      ru: "Работаем не просто с землёй — а с человеком за ней: собственником, который будет её реализовывать. В этом наш подход и отличается.",
+      en: "We don’t just work with the land — we work with the person behind it: the owner who will bring it to life. That’s what makes our approach different.",
     },
     body: {
-      ru: "Создаём системы роста — стратегия, финансовая модель, команда, земля, продажи, публичное позиционирование. 20+ лет предпринимательства, 20+ запущенных проектов, антикризисная пересборка, выход на новые рынки. Работаем там, где институциональный девелопмент и капитал только формируются — Россия, Армения, Кыргызстан, Азербайджан, Таджикистан.",
-      en: "We build growth systems — strategy, financial model, team, land, sales, and public positioning. 20+ years of entrepreneurship, 20+ launched projects, crisis turnaround, and entry into new markets. We work where institutional development and capital are still emerging — Russia, Armenia, Kyrgyzstan, Azerbaijan, Tajikistan.",
+      ru: "Землепродюсирование — наш флагман: превращаем участок в готовый инвестиционный продукт-звезду — стратегия, мастер-план, финмодель, проектное финансирование, продажи. Но главное отличие в том, что мы продюсируем не только территорию, а и собственника: его команду, капитал и публичное позиционирование. Стоимость актива растёт в 2–4 раза, сроки продажи — короче в 2–3 раза. Работаем там, где институциональный девелопмент и капитал только формируются — Россия, Армения, Кыргызстан, Азербайджан, Таджикистан.",
+      en: "Land producing is our flagship: we turn a plot into a finished star-grade investment product — strategy, master plan, financial model, project finance, sales. But what truly sets us apart is that we produce not only the territory but the owner too: their team, capital, and public positioning. Asset value rises 2–4×; time-to-sell shortens 2–3×. We work where institutional development and capital are still emerging — Russia, Armenia, Kyrgyzstan, Azerbaijan, Tajikistan.",
     },
     primary: { ru: "Стратегический разбор →", en: "Strategic deep-dive →" },
     secondary: { ru: "Манифест и философия →", en: "Manifesto and philosophy →" },
     microTrust: {
-      ru: "Делаем проекты-звёзды · Соединяем несоединимое · Запускаем там, где других нет",
-      en: "We build star projects · We connect the unconnectable · We launch where no one else can",
+      ru: "Продюсируем землю и человека · Делаем проекты-звёзды · Запускаем там, где других нет",
+      en: "We produce land and the person · We build star projects · We launch where no one else can",
     },
   },
 
