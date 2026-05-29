@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { site } from "@/lib/site-config";
+import { site, telegramBotUrl } from "@/lib/site-config";
 import { dict, t } from "@/lib/i18n/dict";
 import { Locale, localePath } from "@/lib/i18n/types";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -12,7 +12,6 @@ function navItems(locale: Locale) {
     { href: localePath(locale, "/about"), label: t(locale, (d) => d.nav.about) },
     { href: localePath(locale, "/services"), label: t(locale, (d) => d.nav.services) },
     { href: localePath(locale, "/individuals"), label: t(locale, (d) => d.nav.individuals) },
-    { href: localePath(locale, "/cases"), label: t(locale, (d) => d.nav.cases) },
     { href: localePath(locale, "/media"), label: t(locale, (d) => d.nav.media) },
     { href: localePath(locale, "/contacts"), label: t(locale, (d) => d.nav.contacts) },
   ];
@@ -104,12 +103,29 @@ export function Header({ locale = "ru" }: { locale?: Locale }) {
         </div>
       )}
 
-      <a
-        href={ctaHref}
-        className="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-red-700 hover:bg-red-800 text-navy-900 text-center text-sm font-medium py-3.5 font-semibold shadow-lg"
-      >
-        {mobileSticky}
-      </a>
+      {/* Мобильная нижняя панель: одна строка, две кнопки рядом.
+          Прячется, когда открыто меню, чтобы ничего не перекрывать. */}
+      {!open && (
+        <div className="md:hidden fixed bottom-4 left-4 right-4 z-50 flex items-stretch gap-2">
+          <a
+            href={ctaHref}
+            className="flex-1 inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-navy-900 text-center text-sm font-semibold py-3.5 shadow-lg"
+          >
+            {mobileSticky}
+          </a>
+          <a
+            href={`${telegramBotUrl}?start=site`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Написать в Telegram"
+            className="inline-flex items-center justify-center bg-gold-500 hover:bg-gold-300 text-navy-900 px-4 shadow-lg"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 7.05l-1.55 7.31c-.12.52-.42.65-.85.4l-2.35-1.74-1.13 1.09c-.13.13-.24.24-.48.24l.17-2.43 4.42-4c.19-.17-.04-.27-.3-.1l-5.47 3.44-2.36-.74c-.51-.16-.52-.51.11-.75l9.21-3.55c.43-.16.81.1.66.83z" />
+            </svg>
+          </a>
+        </div>
+      )}
 
       <span className="sr-only">{site.name}</span>
     </header>

@@ -21,10 +21,13 @@ export const nav = [
   { href: "/about", label: "О компании" },
   { href: "/about#partners", label: "Партнёры" },
   { href: "/services", label: "Услуги" },
-  { href: "/cases", label: "Кейсы" },
+  { href: "/individuals", label: "Физлицам" },
   { href: "/media", label: "Публикации" },
   { href: "/contacts", label: "Контакты" },
 ] as const;
 
 export const ctaPrimaryLabel = "Стратегическая сессия →";
 export const ctaPrimaryHref = "/contacts#form";
+
+/** Telegram-бот @prland1_bot — единственный источник правды для ссылок. */
+export const telegramBotUrl = "https://t.me/prland1_bot";

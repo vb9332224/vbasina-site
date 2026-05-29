@@ -23,7 +23,6 @@ export function Footer({ locale = "ru" }: { locale?: Locale }) {
     { href: localePath(locale, "/about"), label: t(locale, (d) => d.nav.about) },
     { href: localePath(locale, "/services"), label: t(locale, (d) => d.nav.services) },
     { href: localePath(locale, "/individuals"), label: t(locale, (d) => d.nav.individuals) },
-    { href: localePath(locale, "/cases"), label: t(locale, (d) => d.nav.cases) },
     { href: localePath(locale, "/media"), label: t(locale, (d) => d.nav.media) },
     { href: localePath(locale, "/contacts"), label: t(locale, (d) => d.nav.contacts) },
   ];

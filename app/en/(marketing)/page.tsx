@@ -8,7 +8,6 @@ import { Zachem } from "@/components/sections/Zachem";
 import { DlyaKogo } from "@/components/sections/DlyaKogo";
 import { Pochemu } from "@/components/sections/Pochemu";
 import { Kak } from "@/components/sections/Kak";
-import { CasesGrid } from "@/components/sections/CasesGrid";
 import { Quote } from "@/components/sections/Quote";
 import { MediaSection } from "@/components/sections/Media";
 import { CtaBlock } from "@/components/sections/CtaBlock";
@@ -44,7 +43,6 @@ export default function HomePageEn() {
       <DlyaKogo locale="en" />
       <Pochemu locale="en" />
       <Kak locale="en" />
-      <CasesGrid locale="en" />
       <Quote locale="en" />
       <MediaSection locale="en" />
       <CtaBlock locale="en" />
