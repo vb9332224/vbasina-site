@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { FounderImpact } from "@/components/sections/FounderImpact";
 import { Founders } from "@/components/sections/Founders";
 import { VyhodiIzZemli } from "@/components/sections/VyhodiIzZemli";
 import { TrustBar } from "@/components/sections/TrustBar";
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <FounderImpact />
       <Founders locale="ru" />
       <VyhodiIzZemli locale="ru" />
       <TrustBar />
