@@ -13,6 +13,7 @@ export const dict = {
     about: { ru: "О компании", en: "Company" },
     services: { ru: "Услуги", en: "Services" },
     individuals: { ru: "Физлицам", en: "For individuals" },
+    lawyers: { ru: "Юристам", en: "For lawyers" },
     cases: { ru: "Кейсы", en: "Cases" },
     media: { ru: "О нас пишут", en: "Press about us" },
     awards: { ru: "Наши награды", en: "Our awards" },

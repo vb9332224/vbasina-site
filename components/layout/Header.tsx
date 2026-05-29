@@ -12,6 +12,7 @@ function navItems(locale: Locale) {
     { href: localePath(locale, "/about"), label: t(locale, (d) => d.nav.about) },
     { href: localePath(locale, "/services"), label: t(locale, (d) => d.nav.services) },
     { href: localePath(locale, "/individuals"), label: t(locale, (d) => d.nav.individuals) },
+    { href: localePath(locale, "/lawyers"), label: t(locale, (d) => d.nav.lawyers) },
     { href: localePath(locale, "/media"), label: t(locale, (d) => d.nav.media) },
     { href: localePath(locale, "/awards"), label: t(locale, (d) => d.nav.awards) },
     { href: localePath(locale, "/contacts"), label: t(locale, (d) => d.nav.contacts) },
@@ -36,7 +37,7 @@ export function Header({ locale = "ru" }: { locale?: Locale }) {
           BGM <span className="text-cream-100/70">·</span> Consulting
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7 text-sm">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-sm">
           {nav.map((item) => (
             <Link
               key={item.href}

@@ -3,7 +3,7 @@ import { site } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticPaths = ["", "/about", "/services", "/individuals", "/media", "/awards", "/contacts"];
+  const staticPaths = ["", "/about", "/services", "/individuals", "/lawyers", "/media", "/awards", "/contacts"];
 
   const ru = staticPaths.map((p) => ({
     url: `${site.url}${p}`,

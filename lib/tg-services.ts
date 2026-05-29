@@ -16,6 +16,7 @@ export type TgService = {
 
 export const tgServices: TgService[] = [
   { code: "land_defense", title: "🏡 Защита земли от изъятия (физлицам)", slug: "individuals",     kind: "b2c" },
+  { code: "lawyers",      title: "⚖️ Обучение юристов (земля + девелопмент)", slug: "lawyers",     kind: "b2b" },
   { code: "intro",        title: "📅 15-минутное знакомство",             slug: "intro",           kind: "b2b" },
   { code: "land",         title: "🌿 Землепродюсирование",                slug: "land",            kind: "b2b" },
   { code: "strategy",     title: "🎯 Стратегическая сессия",              slug: "strategy",        kind: "b2b" },

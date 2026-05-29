@@ -22,6 +22,7 @@ export const nav = [
   { href: "/about#partners", label: "Партнёры" },
   { href: "/services", label: "Услуги" },
   { href: "/individuals", label: "Физлицам" },
+  { href: "/lawyers", label: "Юристам" },
   { href: "/media", label: "О нас пишут" },
   { href: "/awards", label: "Наши награды" },
   { href: "/contacts", label: "Контакты" },
