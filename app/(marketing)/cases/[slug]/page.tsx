@@ -201,7 +201,7 @@ export default async function CasePage({
                 <h3 className="font-serif text-2xl md:text-3xl text-navy-900 mb-5">
                   Хотите похожий проект?
                 </h3>
-                <Button href="/contacts#form">Записаться на сессию →</Button>
+                <Button href="/contacts#form">Записаться на консультацию →</Button>
               </div>
             </Reveal>
 

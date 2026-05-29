@@ -20,7 +20,7 @@ export const dict = {
   },
   ctaPrimary: { ru: "Стратегическая сессия →", en: "Strategy session →" },
   ctaContactTeam: { ru: "Связаться с командой", en: "Contact our team" },
-  ctaMobileSticky: { ru: "Записаться на сессию →", en: "Book a session →" },
+  ctaMobileSticky: { ru: "Записаться на консультацию →", en: "Book a consultation →" },
 
   // === HERO ===
   hero: {
@@ -351,7 +351,7 @@ export const dict = {
       en: "I consent to the processing of my personal data in accordance with the",
     },
     consentLink: { ru: "политикой конфиденциальности", en: "privacy policy" },
-    submit: { ru: "Записаться на сессию →", en: "Book the session →" },
+    submit: { ru: "Записаться на консультацию →", en: "Book a consultation →" },
     sending: { ru: "Отправляем…", en: "Sending…" },
     successTitle: { ru: "Заявка отправлена", en: "Request submitted" },
     successBody: {

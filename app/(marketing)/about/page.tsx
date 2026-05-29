@@ -213,7 +213,7 @@ export default function AboutPage() {
               провести корпоративную сессию или работать самостоятельно с рекомендациями.
             </p>
             <Button href="/contacts#form" variant="primary">
-              Записаться на сессию →
+              Записаться на консультацию →
             </Button>
           </Reveal>
         </div>

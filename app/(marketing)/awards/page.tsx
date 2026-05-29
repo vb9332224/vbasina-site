@@ -61,7 +61,7 @@ export default function AwardsPage() {
             <h2 className="font-serif text-3xl md:text-4xl text-navy-900 mb-6 max-w-3xl mx-auto leading-tight">
               Стратегическая сессия — 90 минут лично
             </h2>
-            <Button href="/contacts#form">Записаться на сессию →</Button>
+            <Button href="/contacts#form">Записаться на консультацию →</Button>
           </Reveal>
         </div>
       </section>
