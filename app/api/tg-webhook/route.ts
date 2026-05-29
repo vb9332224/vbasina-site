@@ -1,14 +1,20 @@
 /**
  * Telegram-webhook для бота @prland1_bot.
  *
- * Сценарий:
- *   1. /start — приветствие + 8 inline-кнопок услуг.
- *   2. Клиент жмёт кнопку → бот шлёт «Напишите имя и контакт» с force_reply,
- *      в тексте сообщения зашит код услуги (мы достаём его потом).
- *   3. Клиент отвечает на это сообщение → мы видим service code в reply_to_message,
- *      собираем заявку и отправляем её Виолетте в основной чат.
+ * Сценарий (контакт — ОБЯЗАТЕЛЕН):
+ *   1. /start [код] — приветствие + inline-кнопки.
+ *      Если в /start пришёл код услуги (deep-link с сайта,
+ *      напр. https://t.me/prland1_bot?start=land_defense) —
+ *      сразу запускаем сценарий этой услуги.
+ *   2. Клиент жмёт кнопку → бот просит описать ситуацию ответом
+ *      на сообщение (в тексте зашит [service:CODE]).
+ *   3. Клиент отвечает → заявку пересылаем владельцу и СРАЗУ
+ *      просим поделиться номером кнопкой request_contact.
+ *   4. Клиент жмёт «Отправить мой номер» → Telegram присылает contact,
+ *      номер уходит владельцу. Только теперь заявка считается полной.
  *
- * Хранения сессий в БД не нужно — состояние едет через reply_to_message.
+ * Состояние не храним — оно едет через reply_to_message + request_contact.
+ * Контакт обязателен: пока номера нет, бот настойчиво его запрашивает.
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -58,8 +64,10 @@ async function showServicesMenu(chatId: number) {
 
   const text =
     "<b>Добрый день! Это бот BGM Consulting.</b>\n\n" +
-    "Расскажите, что вас интересует — выберите формат, и наша команда " +
-    "свяжется с вами в течение рабочего дня.";
+    "🏡 <b>Физлицам</b> — если у вас выводят участок, грозят изъятием или сносом дома, " +
+    "выберите первую кнопку: разберём ситуацию и составим стратегию защиты.\n\n" +
+    "🌿 <b>Бизнесу и девелопменту</b> — выберите нужный формат ниже.\n\n" +
+    "Чтобы мы могли с вами связаться, в конце попросим оставить номер телефона.";
 
   await tg("sendMessage", {
     chat_id: chatId,
@@ -69,22 +77,49 @@ async function showServicesMenu(chatId: number) {
   });
 }
 
-async function askContact(chatId: number, code: string) {
+/** Шаг 1 — просим описать ситуацию ответом на сообщение (несёт [service:CODE]). */
+async function askDetails(chatId: number, code: string) {
   const svc = tgServiceByCode(code);
   if (!svc) return;
-  // service tag прячется внизу сообщения — потом достанется из reply_to_message.text
-  const text =
-    `<b>Вы выбрали:</b> ${escapeHtml(svc.title)}\n\n` +
-    `Напишите ответом на это сообщение:\n` +
-    `1. Как вас зовут\n` +
-    `2. Удобный контакт — телефон, telegram-username или email\n` +
-    `3. Кратко — суть задачи (по желанию)\n\n` +
-    `<i>[service:${svc.code}]</i>`;
+
+  const isDefense = svc.code === "land_defense";
+
+  const text = isDefense
+    ? `<b>Защита земли от изъятия</b>\n\n` +
+      `Опишите <b>ответом на это сообщение</b> вашу ситуацию:\n` +
+      `1. Что происходит с участком (вывод из населённого пункта, перевод в сельхоз, «особо ценные», изъятие, снос)\n` +
+      `2. На какой стадии вы сейчас (письма, суд, постановление)\n` +
+      `3. Регион и назначение участка\n\n` +
+      `Консультация со стратегией — от 10 000 ₽.\n` +
+      `<i>[service:${svc.code}]</i>`
+    : `<b>Вы выбрали:</b> ${escapeHtml(svc.title)}\n\n` +
+      `Опишите <b>ответом на это сообщение</b>:\n` +
+      `1. Как вас зовут\n` +
+      `2. Кратко — суть задачи\n\n` +
+      `<i>[service:${svc.code}]</i>`;
+
   await tg("sendMessage", {
     chat_id: chatId,
     text,
     parse_mode: "HTML",
-    reply_markup: { force_reply: true, selective: true },
+    reply_markup: { force_reply: true, selective: false },
+  });
+}
+
+/** Шаг 2 — ОБЯЗАТЕЛЬНЫЙ контакт через кнопку request_contact. */
+async function requestPhone(chatId: number) {
+  await tg("sendMessage", {
+    chat_id: chatId,
+    text:
+      "Спасибо! Остался <b>один шаг</b> 👇\n\n" +
+      "Нажмите кнопку <b>«📱 Отправить мой номер»</b>, чтобы мы могли с вами связаться. " +
+      "Без контакта мы не сможем ответить.",
+    parse_mode: "HTML",
+    reply_markup: {
+      keyboard: [[{ text: "📱 Отправить мой номер", request_contact: true }]],
+      resize_keyboard: true,
+      one_time_keyboard: true,
+    },
   });
 }
 
@@ -93,7 +128,6 @@ async function forwardLeadToOwner(opts: {
   fromUsername?: string;
   fromChatId: number;
   serviceTitle: string;
-  serviceCode: string;
   message: string;
 }) {
   const ownerChatId = process.env.TELEGRAM_CHAT_ID;
@@ -107,6 +141,7 @@ async function forwardLeadToOwner(opts: {
       opts.fromUsername ? ` (@${escapeHtml(opts.fromUsername)})` : ""
     }`,
     `<b>Telegram chat ID:</b> <code>${opts.fromChatId}</code>`,
+    `<b>Контакт:</b> ⏳ ждём номер телефона`,
     ``,
     `<b>Сообщение клиента:</b>`,
     escapeHtml(opts.message),
@@ -120,14 +155,45 @@ async function forwardLeadToOwner(opts: {
   });
 }
 
-async function confirmToClient(chatId: number) {
+async function forwardContactToOwner(opts: {
+  fromName: string;
+  fromUsername?: string;
+  fromChatId: number;
+  phone: string;
+}) {
+  const ownerChatId = process.env.TELEGRAM_CHAT_ID;
+  if (!ownerChatId) return;
+
+  const lines = [
+    `<b>📱 Контакт получен</b>`,
+    ``,
+    `<b>От:</b> ${escapeHtml(opts.fromName)}${
+      opts.fromUsername ? ` (@${escapeHtml(opts.fromUsername)})` : ""
+    }`,
+    `<b>Телефон:</b> <code>${escapeHtml(opts.phone)}</code>`,
+    `<b>Telegram chat ID:</b> <code>${opts.fromChatId}</code>`,
+    ``,
+    `Свяжитесь с клиентом по телефону или напишите в Telegram.`,
+  ];
+
+  await tg("sendMessage", {
+    chat_id: ownerChatId,
+    text: lines.join("\n"),
+    parse_mode: "HTML",
+    disable_web_page_preview: true,
+  });
+}
+
+/** Финальное подтверждение + убираем reply-клавиатуру. */
+async function confirmComplete(chatId: number) {
   await tg("sendMessage", {
     chat_id: chatId,
     text:
-      "<b>Заявка принята.</b>\n\n" +
-      "Наша команда свяжется с вами в течение рабочего дня.\n" +
-      "Если нужно что-то добавить — просто напишите ниже.",
+      "<b>Заявка принята полностью.</b>\n\n" +
+      "Мы получили вашу ситуацию и контакт — команда свяжется с вами в течение рабочего дня.\n" +
+      "Если нужно что-то добавить, просто напишите ниже.",
     parse_mode: "HTML",
+    reply_markup: { remove_keyboard: true },
   });
 }
 
@@ -141,6 +207,7 @@ type TgUpdate = {
     from?: { first_name?: string; last_name?: string; username?: string };
     text?: string;
     reply_to_message?: { text?: string };
+    contact?: { phone_number: string; first_name?: string; last_name?: string };
   };
   callback_query?: {
     id: string;
@@ -149,6 +216,14 @@ type TgUpdate = {
     data?: string;
   };
 };
+
+function nameOf(from: { first_name?: string; last_name?: string; username?: string }): string {
+  return (
+    [from.first_name, from.last_name].filter(Boolean).join(" ").trim() ||
+    from.username ||
+    "—"
+  );
+}
 
 export async function POST(req: NextRequest) {
   // Простейшая защита — секрет в заголовке (Telegram это поддерживает на setWebhook)
@@ -172,77 +247,80 @@ export async function POST(req: NextRequest) {
     const cq = update.callback_query;
     const chatId = cq.message?.chat.id;
     const data = cq.data ?? "";
+    await tg("answerCallbackQuery", { callback_query_id: cq.id });
     if (chatId && data.startsWith("srv:")) {
-      const code = data.slice(4);
-      // быстрый ack
-      await tg("answerCallbackQuery", { callback_query_id: cq.id });
-      await askContact(chatId, code);
-    } else {
-      await tg("answerCallbackQuery", { callback_query_id: cq.id });
+      await askDetails(chatId, data.slice(4));
     }
     return NextResponse.json({ ok: true });
   }
 
-  // 2) обычное сообщение
   const msg = update.message;
-  if (!msg || !msg.text) return NextResponse.json({ ok: true });
+  if (!msg) return NextResponse.json({ ok: true });
 
   const chatId = msg.chat.id;
-  const text = msg.text.trim();
   const from = msg.from ?? {};
-  const fromName =
-    [from.first_name, from.last_name].filter(Boolean).join(" ").trim() ||
-    from.username ||
-    "—";
+  const fromName = nameOf(from);
 
-  // 2a) /start — показать меню
-  if (text === "/start" || text.startsWith("/start ")) {
-    await showServicesMenu(chatId);
+  // 2) контакт получен (request_contact) — ОБЯЗАТЕЛЬНЫЙ шаг
+  if (msg.contact?.phone_number) {
+    await forwardContactToOwner({
+      fromName,
+      fromUsername: from.username,
+      fromChatId: chatId,
+      phone: msg.contact.phone_number,
+    });
+    await confirmComplete(chatId);
     return NextResponse.json({ ok: true });
   }
 
-  // 2b) команды-helpers
+  const text = (msg.text ?? "").trim();
+  if (!text) return NextResponse.json({ ok: true });
+
+  // 3a) /start [код] — deep-link или меню
+  if (text === "/start" || text.startsWith("/start ")) {
+    const param = text.slice("/start".length).trim();
+    const svc = param ? tgServiceByCode(param) : undefined;
+    if (svc) {
+      await askDetails(chatId, svc.code);
+    } else {
+      await showServicesMenu(chatId);
+    }
+    return NextResponse.json({ ok: true });
+  }
+
+  // 3b) команды-helpers
   if (text === "/menu" || text === "/services" || text === "/услуги") {
     await showServicesMenu(chatId);
     return NextResponse.json({ ok: true });
   }
 
-  // 2c) ответ на форму с service-тегом
+  // 3c) ответ на форму с service-тегом → пересылаем заявку и просим телефон
   const replyText = msg.reply_to_message?.text ?? "";
   const tagMatch = replyText.match(SERVICE_TAG_RE);
   if (tagMatch) {
-    const code = tagMatch[1];
-    const svc = tgServiceByCode(code);
+    const svc = tgServiceByCode(tagMatch[1]);
     if (svc) {
       await forwardLeadToOwner({
         fromName,
         fromUsername: from.username,
         fromChatId: chatId,
         serviceTitle: svc.title,
-        serviceCode: svc.code,
         message: text,
       });
-      await confirmToClient(chatId);
+      await requestPhone(chatId);
       return NextResponse.json({ ok: true });
     }
   }
 
-  // 2d) свободное сообщение — переслать владельцу как «без выбора услуги»
+  // 3d) свободное сообщение — пересылаем и ОБЯЗАТЕЛЬНО запрашиваем контакт
   await forwardLeadToOwner({
     fromName,
     fromUsername: from.username,
     fromChatId: chatId,
-    serviceTitle: "— не выбрана (свободное сообщение)",
-    serviceCode: "free",
+    serviceTitle: "— свободное сообщение",
     message: text,
   });
-  await tg("sendMessage", {
-    chat_id: chatId,
-    text:
-      "Получили ваше сообщение. Если хотите выбрать конкретный формат — отправьте /menu.",
-    parse_mode: "HTML",
-  });
-
+  await requestPhone(chatId);
   return NextResponse.json({ ok: true });
 }
 

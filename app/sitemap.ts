@@ -4,7 +4,7 @@ import { casesFull } from "@/lib/cases-full";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticPaths = ["", "/about", "/services", "/cases", "/media", "/contacts"];
+  const staticPaths = ["", "/about", "/services", "/individuals", "/cases", "/media", "/contacts"];
 
   const ru = staticPaths.map((p) => ({
     url: `${site.url}${p}`,

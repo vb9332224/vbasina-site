@@ -12,6 +12,7 @@ export const dict = {
   nav: {
     about: { ru: "О компании", en: "Company" },
     services: { ru: "Услуги", en: "Services" },
+    individuals: { ru: "Физлицам", en: "For individuals" },
     cases: { ru: "Кейсы", en: "Cases" },
     media: { ru: "Публикации", en: "Press" },
     contacts: { ru: "Контакты", en: "Contact" },
