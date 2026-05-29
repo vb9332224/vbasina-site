@@ -24,6 +24,7 @@ export function Footer({ locale = "ru" }: { locale?: Locale }) {
     { href: localePath(locale, "/services"), label: t(locale, (d) => d.nav.services) },
     { href: localePath(locale, "/individuals"), label: t(locale, (d) => d.nav.individuals) },
     { href: localePath(locale, "/media"), label: t(locale, (d) => d.nav.media) },
+    { href: localePath(locale, "/awards"), label: t(locale, (d) => d.nav.awards) },
     { href: localePath(locale, "/contacts"), label: t(locale, (d) => d.nav.contacts) },
   ];
 

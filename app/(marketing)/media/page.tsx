@@ -6,36 +6,37 @@ import { publications } from "@/lib/publications";
 import { Speaking } from "@/components/sections/Speaking";
 
 export const metadata: Metadata = {
-  title: "Публикации и выступления — Виолетта Басина",
+  title: "О нас пишут — статьи и видео | Виолетта Басина",
   description:
-    "РБК, Ведомости, Интерфакс, ЕРЗ.РФ, ЦИАН, ЕвроМедиа — подборка публикаций. Прямые эфиры и интервью на YouTube.",
+    "РБК, Ведомости, Интерфакс, ЕРЗ.РФ, ЦИАН, ЕвроМедиа — статьи и интервью. Прямые эфиры и видео-выступления на YouTube. Все ссылки ведут на оригиналы.",
+  alternates: { canonical: "/media" },
 };
 
 export default function MediaPage() {
   return (
     <>
       <PageHero
-        eyebrow="— Публичность"
+        eyebrow="— О нас пишут"
         title={
           <>
-            Публикации<br />
-            <span className="text-gold-500">и выступления</span>
+            Статьи<br />
+            <span className="text-gold-500">и видео о нас</span>
           </>
         }
-        subtitle="Подборка публикаций в СМИ и публичных выступлений. Все ссылки ведут на оригиналы."
+        subtitle="Ссылки на статьи и интервью в СМИ, а ниже — записи эфиров и видео-выступлений. Все ссылки ведут на оригиналы."
       >
         <nav className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.14em]">
           <a
             href="#press"
             className="border border-gold-500/40 px-4 py-2 text-cream-100/85 hover:bg-gold-500 hover:text-navy-900 transition-colors"
           >
-            Публикации в СМИ
+            Ссылки на статьи
           </a>
           <a
             href="#speaking"
             className="border border-gold-500/40 px-4 py-2 text-cream-100/85 hover:bg-gold-500 hover:text-navy-900 transition-colors"
           >
-            Выступления (15)
+            Ссылки на видео
           </a>
         </nav>
       </PageHero>
